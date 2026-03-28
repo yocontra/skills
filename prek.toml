@@ -1,0 +1,30 @@
+# Configuration file for `prek`, a git hook framework written in Rust.
+# See https://prek.j178.dev for more information.
+
+[[repos]]
+repo = "builtin"
+hooks = [
+    { id = "trailing-whitespace" },
+    { id = "end-of-file-fixer" },
+    { id = "check-yaml" },
+    { id = "check-added-large-files", args = ["--maxkb=1000"] },
+    { id = "check-merge-conflict" },
+    { id = "detect-private-key" },
+]
+
+[[repos]]
+repo = "https://github.com/shellcheck-py/shellcheck-py"
+rev = "v0.10.0.1"
+hooks = [
+    { id = "shellcheck" },
+]
+
+[[repos]]
+repo = "local"
+
+[[repos.hooks]]
+id = "biome-check"
+name = "biome check (ts)"
+entry = "bunx @biomejs/biome check"
+language = "system"
+types = ["ts"]
