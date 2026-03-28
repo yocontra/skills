@@ -113,4 +113,4 @@ These aren't required but pair well with these skills. Install via `/plugins` in
 
 ## License
 
-Use however you want. No attribution needed.
+[MIT](./LICENSE)
