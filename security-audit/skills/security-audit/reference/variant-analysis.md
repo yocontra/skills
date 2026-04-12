@@ -12,15 +12,14 @@ Don't search for the symptom — search for the root cause. If you found SQL inj
 
 Write a search pattern that matches the confirmed finding precisely. This is your baseline — it should have zero false positives because you know this exact instance is real.
 
-**White-box:** Use Grep with a regex that matches the vulnerable code pattern.
-**Black-box:** Identify the request pattern (same parameter type, same endpoint structure).
+Use Grep with a regex that matches the vulnerable code pattern.
 
 ### Step 3: Identify abstraction points
 
 What could vary while keeping the same root cause?
 
 - Different variable names but same operation
-- Different file/endpoint but same framework method
+- Different file but same framework method
 - Different input source but same sink
 - Same pattern in a different language (polyglot repos)
 
@@ -45,14 +44,6 @@ For each new location found:
 - Is this a true variant or a coincidental pattern match?
 
 Report confirmed variants as additional findings in the main report's Variant Analysis section. They inherit the same bug class and severity unless specific mitigations change the assessment.
-
-## Tool selection
-
-| Scope | Tool | When |
-|-------|------|------|
-| Quick pattern | Grep | Simple string/regex patterns in a single codebase |
-| Cross-function | Agent with Read/Grep | Need to trace data flow across function boundaries |
-| Cross-endpoint | WebFetch | Black-box: test the same payload on structurally similar endpoints |
 
 ## Common variant patterns
 

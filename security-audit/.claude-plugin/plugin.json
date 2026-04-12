@@ -1,0 +1,9 @@
+{
+  "$schema": "https://raw.githubusercontent.com/hesreallyhim/claude-code-json-schema/main/schemas/plugin.schema.json",
+  "name": "security-audit",
+  "description": "Adversarial white-box vulnerability research — finders, disprovers, referees audit source code for novel exploitable bugs.",
+  "version": "1.0.0",
+  "author": { "name": "Eric Schoffstall", "email": "yo@contra.io", "url": "https://contra.io" },
+  "keywords": ["security", "vulnerabilities", "audit", "source-code", "white-box"],
+  "skills": ["./skills/security-audit"]
+}

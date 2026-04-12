@@ -10,7 +10,9 @@ A collection of personal [Claude Code](https://docs.anthropic.com/en/docs/claude
 |--------|--------------|--------------|
 | **[bug-audit](./bug-audit)** | `/bug-audit` | Hunts bugs using adversarial hunter/skeptic/referee trios in parallel. Catches logic errors, race conditions, and edge cases. |
 | **[perf-audit](./perf-audit)** | `/perf-audit` | Same adversarial trio structure, but focused on performance: slow queries, memory leaks, N+1s, scalability bottlenecks. |
-| **[exploit-finder](./exploit-finder)** | `/exploit-finder` | Three-role adversarial security audit: finders hunt bugs, disprovers try to kill findings, referees make the final call. White-box and black-box modes. |
+| **[security-audit](./security-audit)** | `/security-audit` | Adversarial white-box source code vulnerability research. Finders hunt bugs, disprovers try to kill findings, referees make the final call. |
+| **[security-pentest](./security-pentest)** | `/security-pentest` | Adversarial black-box penetration testing against live targets. Same trio methodology applied to endpoints you can probe. |
+| **[security-reverse](./security-reverse)** | `/security-reverse` | Binary reverse engineering — decompile ELF, PE, Mach-O, and firmware to C using Ghidra for security auditing. |
 | **[code-simplify](./code-simplify)** | `/code-simplify` | Reviews recent code changes and cleans up reuse, quality, and efficiency problems. |
 | **[exhaustive-search](./exhaustive-search)** | `/exhaustive-search` | Searches an entire space with parallel agent teams. Every item gets checked, no sampling, no skipping. |
 
@@ -87,7 +89,7 @@ cp -r skills/bug-audit ~/.claude/plugins/bug-audit
 ```bash
 git clone https://github.com/yocontra/skills.git
 cd skills
-for plugin in android-acceleration asset-gen bug-audit code-simplify coreml-optimization deep-planner dev-workflow exhaustive-search exploit-finder freshen gh-cli graphite humanizer ios-debugging model-quantization perf-audit skill-improver startup-namer worktree-manager; do
+for plugin in android-acceleration asset-gen bug-audit code-simplify coreml-optimization deep-planner dev-workflow exhaustive-search freshen gh-cli graphite humanizer ios-debugging model-quantization perf-audit security-audit security-pentest security-reverse skill-improver startup-namer worktree-manager; do
   cp -r "$plugin" ~/.claude/plugins/"$plugin"
 done
 ```
@@ -103,7 +105,9 @@ Each skill is triggered by slash command or natural language:
 ```
 /bug-audit                     # Full adversarial bug audit
 /perf-audit                    # Hunt performance problems
-/exploit-finder                # Find security vulnerabilities
+/security-audit                # White-box source code vulnerability research
+/security-pentest              # Black-box penetration testing
+/security-reverse              # Decompile binaries for audit
 /code-simplify                 # Clean up recent code changes
 /exhaustive-search             # Exhaustive search of a space
 /deep-planner                  # Plan a large implementation
@@ -125,7 +129,9 @@ Or just describe what you want:
 
 - "audit this project for bugs"
 - "find performance issues in the rendering pipeline"
-- "hunt for security vulnerabilities"
+- "audit this source code for security vulnerabilities"
+- "pentest this API endpoint"
+- "reverse engineer this binary"
 - "clean up my recent changes"
 - "check every file for X"
 - "plan out this feature"
@@ -144,7 +150,8 @@ Or just describe what you want:
 - **graphite** requires the [Graphite CLI](https://graphite.dev/docs/installing-the-cli) (`gt`)
 - **startup-namer** requires web access for domain/trademark lookups
 - **asset-gen** requires API keys for Gemini, ElevenLabs, and/or Meshy AI
-- **exploit-finder** black-box mode can use [Kali Linux in a container](./exploit-finder/skills/exploit-finder/reference/kali-container-setup.md) for nmap, metasploit, etc.
+- **security-pentest** can use [Kali Linux in a container](./security-pentest/skills/security-pentest/reference/kali-container-setup.md) for nmap, metasploit, etc.
+- **security-reverse** requires [Ghidra](https://ghidra-sre.org/) (`brew install ghidra`)
 - **gh-cli** requires the [GitHub CLI](https://cli.github.com/) (`gh auth login`)
 
 ## License

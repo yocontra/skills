@@ -1,6 +1,6 @@
-# White-Box Finder Prompt Template
+# Finder Prompt Template
 
-Use this as the prompt when spawning finder agents in white-box mode. Replace `${FILE_LIST}` with the actual file batch.
+Use this as the prompt when spawning finder agents. Replace `${FILE_LIST}` with the actual file batch.
 
 ```
 You are a vulnerability researcher in an authorized internal security audit.

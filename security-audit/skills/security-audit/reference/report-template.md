@@ -2,8 +2,6 @@
 
 Start with the structured verdict block (see Interface in SKILL.md), then this narrative structure. Print directly to user.
 
-## White-box report
-
 ```markdown
 # Vulnerability Report: ${TARGET_NAME}
 **Date:** ${DATE}
@@ -65,12 +63,3 @@ For each confirmed finding, list other locations in the codebase with the same p
 ## Coverage Gaps
 (zones where finders returned nothing or agents failed)
 ```
-
-## Black-box report
-
-Same structure with these changes:
-- **Location** → **Endpoint:** `${METHOD} ${URL}` + **Parameter:** `${PARAM}`
-- **Scope** → `${N_ENDPOINTS} endpoints across ${N_AREAS} functional areas`
-- **Disprover's best objection** references observed behavior, not source code
-- **Variant Analysis** lists other endpoints with the same vulnerability pattern
-- Add a **Security Headers** section noting missing headers observed during recon

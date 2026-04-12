@@ -1,0 +1,9 @@
+{
+  "$schema": "https://raw.githubusercontent.com/hesreallyhim/claude-code-json-schema/main/schemas/plugin.schema.json",
+  "name": "security-reverse",
+  "description": "Binary reverse engineering — decompile ELF, PE, Mach-O, and firmware binaries to C using Ghidra for security auditing.",
+  "version": "1.0.0",
+  "author": { "name": "Eric Schoffstall", "email": "yo@contra.io", "url": "https://contra.io" },
+  "keywords": ["security", "reverse-engineering", "ghidra", "binary", "decompilation"],
+  "skills": ["./skills/security-reverse"]
+}
