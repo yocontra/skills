@@ -10,7 +10,7 @@ A collection of personal [Claude Code](https://docs.anthropic.com/en/docs/claude
 |--------|--------------|--------------|
 | **[bug-audit](./bug-audit)** | `/bug-audit` | Hunts bugs using adversarial hunter/skeptic/referee trios in parallel. Catches logic errors, race conditions, and edge cases. |
 | **[perf-audit](./perf-audit)** | `/perf-audit` | Same adversarial trio structure, but focused on performance: slow queries, memory leaks, N+1s, scalability bottlenecks. |
-| **[exploit-finder](./exploit-finder)** | `/exploit-finder` | Adversarial vulnerability research with parallel finder/disprover/referee agents. White-box (source) and black-box (pentesting) modes. Covers web, mobile, smart contracts, kernels, IoT, CI/CD, cloud, and more. |
+| **[exploit-finder](./exploit-finder)** | `/exploit-finder` | Three-role adversarial security audit: finders hunt bugs, disprovers try to kill findings, referees make the final call. White-box and black-box modes. |
 | **[code-simplify](./code-simplify)** | `/code-simplify` | Reviews recent code changes and cleans up reuse, quality, and efficiency problems. |
 | **[exhaustive-search](./exhaustive-search)** | `/exhaustive-search` | Searches an entire space with parallel agent teams. Every item gets checked, no sampling, no skipping. |
 
@@ -49,8 +49,8 @@ A collection of personal [Claude Code](https://docs.anthropic.com/en/docs/claude
 
 | Plugin | Slash Command | What it does |
 |--------|--------------|--------------|
-| **[gh-cli](./gh-cli)** | — | Routes GitHub operations through the authenticated `gh` CLI. Avoids rate limits, private repo 404s, and incomplete API responses. |
-| **[skill-improver](./skill-improver)** | `/skill-improver` | Reviews and iteratively improves Claude Code skill files. Catches structural issues, unclear instructions, and prompt anti-patterns. |
+| **[gh-cli](./gh-cli)** | — | Routes GitHub operations through `gh` CLI instead of unauthenticated web fetches. |
+| **[skill-improver](./skill-improver)** | `/skill-improver` | Reviews Claude Code skill files for structural issues, ambiguous instructions, and prompt anti-patterns. |
 
 ### Other
 
@@ -144,7 +144,7 @@ Or just describe what you want:
 - **graphite** requires the [Graphite CLI](https://graphite.dev/docs/installing-the-cli) (`gt`)
 - **startup-namer** requires web access for domain/trademark lookups
 - **asset-gen** requires API keys for Gemini, ElevenLabs, and/or Meshy AI
-- **exploit-finder** black-box mode benefits from [Kali Linux in a container](./exploit-finder/skills/exploit-finder/reference/kali-container-setup.md) for advanced pentesting
+- **exploit-finder** black-box mode can use [Kali Linux in a container](./exploit-finder/skills/exploit-finder/reference/kali-container-setup.md) for nmap, metasploit, etc.
 - **gh-cli** requires the [GitHub CLI](https://cli.github.com/) (`gh auth login`)
 
 ## License

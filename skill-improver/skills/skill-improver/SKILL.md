@@ -1,6 +1,6 @@
 ---
 name: skill-improver
-description: Review and iteratively improve Claude Code skill files. Finds structural issues, unclear instructions, missing edge cases, and prompt anti-patterns.
+description: Review and fix Claude Code skill files. Catches broken frontmatter, ambiguous instructions, and prompt anti-patterns.
 user-invocable: true
 argument-hint: "[path to SKILL.md or plugin directory]"
 allowed-tools: Read, Glob, Grep, Write, Edit, Agent, AskUserQuestion
@@ -9,8 +9,6 @@ allowed-tools: Read, Glob, Grep, Write, Edit, Agent, AskUserQuestion
 $ARGUMENTS
 
 # Skill Improver
-
-Iteratively review and fix Claude Code skill files until they meet quality standards.
 
 ## Step 1: Load the skill
 

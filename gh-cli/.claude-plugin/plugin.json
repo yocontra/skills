@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/hesreallyhim/claude-code-json-schema/main/schemas/plugin.schema.json",
   "name": "gh-cli",
-  "description": "Route GitHub operations through the authenticated gh CLI instead of unauthenticated web fetches. Avoids rate limits, 404s on private repos, and incomplete API responses.",
+  "description": "Route GitHub operations through authenticated gh CLI instead of web fetches. Fixes rate limits and private repo 404s.",
   "version": "1.0.0",
   "author": { "name": "Eric Schoffstall", "email": "yo@contra.io", "url": "https://contra.io" },
   "keywords": ["github", "gh", "cli", "api", "authentication"],
