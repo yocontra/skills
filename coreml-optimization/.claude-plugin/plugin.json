@@ -1,0 +1,9 @@
+{
+  "$schema": "https://raw.githubusercontent.com/hesreallyhim/claude-code-json-schema/main/schemas/plugin.schema.json",
+  "name": "coreml-optimization",
+  "description": "Apple Neural Engine optimization for iOS and macOS, including model conversion, ANE targeting, split einsum, quantization, and on-device deployment.",
+  "version": "1.0.0",
+  "author": { "name": "Eric Schoffstall", "email": "yo@contra.io", "url": "https://contra.io" },
+  "keywords": ["coreml", "apple", "neural-engine", "ios", "macos", "quantization", "ane"],
+  "skills": ["./skills/coreml-optimization"]
+}

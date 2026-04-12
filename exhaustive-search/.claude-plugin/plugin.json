@@ -1,0 +1,9 @@
+{
+  "$schema": "https://raw.githubusercontent.com/hesreallyhim/claude-code-json-schema/main/schemas/plugin.schema.json",
+  "name": "exhaustive-search",
+  "description": "Parallel agent teams that search an entire space exhaustively. Every item gets checked, nothing sampled or skipped.",
+  "version": "1.0.0",
+  "author": { "name": "Eric Schoffstall", "email": "yo@contra.io", "url": "https://contra.io" },
+  "keywords": ["exhaustive", "search", "systematic", "audit", "coverage", "parallel"],
+  "skills": ["./skills/exhaustive-search"]
+}

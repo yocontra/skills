@@ -1,115 +1,141 @@
 # Skills
 
-A collection of personal [Claude Code](https://docs.anthropic.com/en/docs/claude-code) skills I use daily. These extend Claude Code with specialized capabilities -- from auditing codebases for bugs to managing stacked PRs with Graphite.
+A collection of personal [Claude Code](https://docs.anthropic.com/en/docs/claude-code) plugins I use daily. Each one is a standalone plugin with a `.claude-plugin/plugin.json` manifest and one or more skills inside.
 
-## What's included
+## Plugins
 
-| Skill | What it does |
-|-------|-------------|
-| **[bug-audit](./bug-audit)** | Dissects your codebase into audit tables (API endpoints, state machines, data flows, concurrency hotspots, etc.) then exhaustively verifies every entry. Includes red team/blue team adversarial analysis. |
-| **[perf-audit](./perf-audit)** | Three-agent adversarial performance analysis. A hunter finds issues, an adversary challenges them, and a referee judges -- so only real problems survive. |
-| **[humanizer](./humanizer)** | Rewrites AI-generated text to read like a human wrote it. Detects and removes 40+ AI writing patterns (significance inflation, synonym cycling, em dash abuse, etc.). |
-| **[graphite](./graphite)** | Manages stacked PRs through the [Graphite](https://graphite.dev) CLI. Handles branch creation, PR submission, merging, syncing, and restacking. |
-| **[cracked-mode](./cracked-mode)** | Parallel task orchestration. Claude becomes a project manager that delegates all implementation to parallel sub-agents, maximizing throughput. |
-| **[startup-namer](./startup-namer)** | Generates 20 startup name candidates at a time and validates each against domain availability, trademarks, SEO viability, and brand strength. |
-| **[model-quantization](./model-quantization)** | Cross-platform model quantization and format conversion. Covers AWQ, GPTQ, GGUF, INT8, and guides you through HuggingFace/ONNX/CoreML/ExecuTorch pipelines with mobile memory/performance estimates. |
-| **[coreml-optimization](./coreml-optimization)** | Deep guide for CoreML and Apple Neural Engine optimization. Covers ANE-friendly architecture patterns, split einsum attention, coremltools quantization (palettization, INT4), stateful KV cache models, and profiling. |
-| **[android-acceleration](./android-acceleration)** | Hardware-accelerated AI inference on Android. Covers ExecuTorch, Qualcomm QNN (Hexagon NPU), MediaTek NeuroPilot, Samsung Exynos NPU, LiteRT, and XNNPACK CPU fallback across the fragmented Android NPU landscape. |
-| **[ios-debugging](./ios-debugging)** | iOS simulator debugging via deep links, accessibility tree inspection, and log streaming. Covers `xcrun simctl`, idb tools, GPS spoofing, push testing, and hot reload vs rebuild decisions. |
-| **[assets](./assets)** | AI-powered asset generation for images, music, sound effects, and video using APIs like ElevenLabs and others. Includes ready-to-run generation scripts. |
+### Code Quality & Security
+
+| Plugin | Slash Command | What it does |
+|--------|--------------|--------------|
+| **[bug-audit](./bug-audit)** | `/bug-audit` | Hunts bugs using adversarial hunter/skeptic/referee trios in parallel. Catches logic errors, race conditions, and edge cases. |
+| **[perf-audit](./perf-audit)** | `/perf-audit` | Same adversarial trio structure, but focused on performance: slow queries, memory leaks, N+1s, scalability bottlenecks. |
+| **[exploit-finder](./exploit-finder)** | `/exploit-finder` | Finds security vulnerabilities and builds proof-of-concept exploits. For pentesting, CTFs, and authorized security research only. |
+| **[code-simplify](./code-simplify)** | `/code-simplify` | Reviews recent code changes and cleans up reuse, quality, and efficiency problems. |
+| **[exhaustive-search](./exhaustive-search)** | `/exhaustive-search` | Searches an entire space with parallel agent teams. Every item gets checked, no sampling, no skipping. |
+
+### Planning & Workflow
+
+| Plugin | Slash Command | What it does |
+|--------|--------------|--------------|
+| **[deep-planner](./deep-planner)** | `/deep-planner` | Plans and executes large implementation tasks across multiple agents, with numbered plan files and research/review phases. |
+| **[dev-workflow](./dev-workflow)** | `/dev-workflow` | Full feature lifecycle from requirements through merge. Plans, implements with parallel agents, reviews, audits, and opens the PR. |
+| **[worktree-manager](./worktree-manager)** | `/worktree-manager` | Git worktree manager that lets multiple agents work on the same repo in parallel without stepping on each other. |
+| **[graphite](./graphite)** | `/graphite` | Stacked PR workflow through the Graphite CLI. Create branches, submit PRs, merge, sync, and manage stacks with `gt`. |
+
+### Writing & Text
+
+| Plugin | Slash Command | What it does |
+|--------|--------------|--------------|
+| **[humanizer](./humanizer)** | `/humanizer` | Strips AI-generated writing patterns from text: inflated language, promotional filler, AI vocabulary, mechanical structure. |
+| **[freshen](./freshen)** | `/freshen` | Finds stale comments, docstrings, TODOs, and docs, then fixes them. Parallel agents scan the codebase and correct inaccuracies. |
+
+### Asset Generation
+
+| Plugin | Slash Command | What it does |
+|--------|--------------|--------------|
+| **[asset-gen](./asset-gen)** | `/asset-gen` | Generates images, sound effects, music, video, SVGs, and 3D models via Gemini, ElevenLabs, and Meshy AI. |
+
+### Mobile & On-Device ML
+
+| Plugin | Slash Command | What it does |
+|--------|--------------|--------------|
+| **[model-quantization](./model-quantization)** | `/model-quantization` | Quantizes and converts models across formats and platforms: AWQ, GPTQ, GGUF, ONNX, CoreML, ExecuTorch. |
+| **[coreml-optimization](./coreml-optimization)** | `/coreml-optimization` | Targets Apple's Neural Engine on iOS/macOS. Handles conversion, ANE layout, split einsum, and quantization. |
+| **[android-acceleration](./android-acceleration)** | `/android-acceleration` | Runs AI models on Android hardware (NPUs, GPUs, DSPs) via ExecuTorch, QNN, NeuroPilot, LiteRT, ONNX Runtime Mobile. |
+| **[ios-debugging](./ios-debugging)** | `/ios-debugging` | Works with iOS simulators: launch apps, navigate screens, inspect UI, read logs. Supports Expo, React Native, and native Swift. |
+
+### Other
+
+| Plugin | Slash Command | What it does |
+|--------|--------------|--------------|
+| **[startup-namer](./startup-namer)** | `/startup-namer` | Brainstorms startup names and checks viability: domain availability, trademark conflicts, SEO potential, WHOIS data. |
+
+## Plugin Structure
+
+Each plugin follows the same layout:
+
+```
+plugin-name/
+  .claude-plugin/
+    plugin.json          # manifest (name, description, version, author, skills)
+  skills/
+    skill-name/
+      SKILL.md           # skill prompt and instructions
+      references/        # optional reference docs
+      scripts/           # optional helper scripts
+```
 
 ## Installation
 
-### Install a single skill
-
-```bash
-# Clone the repo
-git clone https://github.com/yocontra/skills.git
-
-# Copy a skill folder into your Claude Code skills directory
-cp -r skills/bug-audit ~/.claude/skills/bug-audit
-```
-
-### Install all skills
+### Install a single plugin
 
 ```bash
 git clone https://github.com/yocontra/skills.git
-cp -r skills/bug-audit ~/.claude/skills/bug-audit
-cp -r skills/perf-audit ~/.claude/skills/perf-audit
-cp -r skills/humanizer ~/.claude/skills/humanizer
-cp -r skills/graphite ~/.claude/skills/graphite
-cp -r skills/cracked-mode ~/.claude/skills/cracked-mode
-cp -r skills/startup-namer ~/.claude/skills/startup-namer
-cp -r skills/model-quantization ~/.claude/skills/model-quantization
-cp -r skills/coreml-optimization ~/.claude/skills/coreml-optimization
-cp -r skills/android-acceleration ~/.claude/skills/android-acceleration
-cp -r skills/ios-debugging ~/.claude/skills/ios-debugging
-cp -r skills/assets ~/.claude/skills/assets
+cp -r skills/bug-audit ~/.claude/plugins/bug-audit
 ```
 
-### Verify installation
+### Install all plugins
+
+```bash
+git clone https://github.com/yocontra/skills.git
+cd skills
+for plugin in android-acceleration asset-gen bug-audit code-simplify coreml-optimization deep-planner dev-workflow exhaustive-search exploit-finder freshen graphite humanizer ios-debugging model-quantization perf-audit startup-namer worktree-manager; do
+  cp -r "$plugin" ~/.claude/plugins/"$plugin"
+done
+```
+
+### Verify
 
 Open Claude Code and type `/` -- you should see your installed skills in the autocomplete list.
 
 ## Usage
 
-Each skill is triggered either by slash command or by natural language:
+Each skill is triggered by slash command or natural language:
 
 ```
-/bug-audit                     # Run a full bug audit on the current project
-/perf-audit git diff           # Audit performance of recent changes
-/humanizer [paste text]        # Rewrite AI-sounding text
-/graphite create               # Create a new stacked PR
-/cracked-mode                  # Enter parallel orchestration mode
-/startup-namer                 # Start brainstorming startup names
-/model-quantization            # Quantize a model for mobile deployment
-/coreml-optimization           # Optimize a model for Apple Neural Engine
-/android-acceleration          # Deploy a model to Android NPUs
-/ios-debugging                 # Debug an iOS app in the simulator
-/assets                        # Generate images, music, or sound effects with AI
+/bug-audit                     # Full adversarial bug audit
+/perf-audit                    # Hunt performance problems
+/exploit-finder                # Find security vulnerabilities
+/code-simplify                 # Clean up recent code changes
+/exhaustive-search             # Exhaustive search of a space
+/deep-planner                  # Plan a large implementation
+/dev-workflow                  # Full feature lifecycle
+/worktree-manager              # Manage parallel worktrees
+/graphite create               # Create a stacked PR
+/humanizer [text]              # Strip AI writing patterns
+/freshen                       # Fix stale comments and docs
+/asset-gen image [prompt]      # Generate an image
+/model-quantization            # Quantize a model for mobile
+/coreml-optimization           # Optimize for Apple Neural Engine
+/android-acceleration          # Deploy to Android NPUs
+/ios-debugging                 # Debug on iOS simulator
+/startup-namer                 # Brainstorm startup names
 ```
 
-You can also just describe what you want and Claude will activate the right skill:
+Or just describe what you want:
 
 - "audit this project for bugs"
-- "find performance issues in the map rendering pipeline"
+- "find performance issues in the rendering pipeline"
+- "hunt for security vulnerabilities"
+- "clean up my recent changes"
+- "check every file for X"
+- "plan out this feature"
+- "take this from requirements to merged PR"
 - "make this text sound more human"
-- "open a PR for this change"
-- "go cracked"
-- "help me name my startup"
+- "fix stale comments in the codebase"
+- "generate a sound effect for a button click"
 - "quantize this model to 4-bit for mobile"
 - "optimize this model for ANE"
-- "deploy this model to Android with ExecuTorch"
 - "debug this on the iOS simulator"
-- "generate a sound effect for a button click"
-
-## Recommended Plugins
-
-These aren't required but pair well with these skills. Install via `/plugins` in Claude Code or add to your `~/.claude/settings.json`:
-
-```json
-{
-  "enabledPlugins": {
-    "code-simplifier@claude-plugins-official": true,
-    "context-mode@claude-context-mode": true,
-    "context7@claude-plugins-official": true,
-    "skill-creator@claude-plugins-official": true
-  }
-}
-```
-
-| Plugin | What it does |
-|--------|-------------|
-| **code-simplifier** | Run `/simplify` after writing code to clean it up for clarity, consistency, and maintainability without changing behavior. |
-| **context-mode** | Processes large outputs (logs, build output, JSON) in a sandbox so they don't blow up your context window. |
-| **context7** | Fetches live documentation for libraries and frameworks so Claude uses current APIs instead of stale training data. |
-| **skill-creator** | Create new skills, modify existing ones, and run evals to test them. Useful if you want to fork and customize these skills. |
+- "help me name my startup"
 
 ## Requirements
 
 - [Claude Code](https://docs.anthropic.com/en/docs/claude-code) CLI, desktop app, or IDE extension
 - **graphite** requires the [Graphite CLI](https://graphite.dev/docs/installing-the-cli) (`gt`)
 - **startup-namer** requires web access for domain/trademark lookups
+- **asset-gen** requires API keys for Gemini, ElevenLabs, and/or Meshy AI
 
 ## License
 

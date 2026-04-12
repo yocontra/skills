@@ -1,0 +1,9 @@
+{
+  "$schema": "https://raw.githubusercontent.com/hesreallyhim/claude-code-json-schema/main/schemas/plugin.schema.json",
+  "name": "code-simplify",
+  "description": "Reviews recent code changes for dead code, missed abstractions, readability issues, and inefficiencies, then fixes what it finds.",
+  "version": "1.0.0",
+  "author": { "name": "Eric Schoffstall", "email": "yo@contra.io", "url": "https://contra.io" },
+  "keywords": ["refactoring", "simplification", "code-quality", "readability"],
+  "skills": ["./skills/code-simplify"]
+}

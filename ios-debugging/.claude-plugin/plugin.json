@@ -1,0 +1,9 @@
+{
+  "$schema": "https://raw.githubusercontent.com/hesreallyhim/claude-code-json-schema/main/schemas/plugin.schema.json",
+  "name": "ios-debugging",
+  "description": "iOS simulator control: launching apps, navigating screens, inspecting UI, and reading logs. Works with Expo, React Native, and native Swift.",
+  "version": "1.0.0",
+  "author": { "name": "Eric Schoffstall", "email": "yo@contra.io", "url": "https://contra.io" },
+  "keywords": ["ios", "simulator", "debugging", "react-native", "expo", "swift", "xcrun"],
+  "skills": ["./skills/ios-debugging"]
+}

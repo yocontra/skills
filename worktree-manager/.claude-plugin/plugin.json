@@ -1,0 +1,9 @@
+{
+  "$schema": "https://raw.githubusercontent.com/hesreallyhim/claude-code-json-schema/main/schemas/plugin.schema.json",
+  "name": "worktree-manager",
+  "description": "Manage git worktrees so multiple agents can work on the same repo in parallel without stepping on each other.",
+  "version": "1.0.0",
+  "author": { "name": "Eric Schoffstall", "email": "yo@contra.io", "url": "https://contra.io" },
+  "keywords": ["worktree", "git", "parallel", "agents", "isolation", "concurrent"],
+  "skills": ["./skills/worktree-manager"]
+}

@@ -1,0 +1,9 @@
+{
+  "$schema": "https://raw.githubusercontent.com/hesreallyhim/claude-code-json-schema/main/schemas/plugin.schema.json",
+  "name": "deep-planner",
+  "description": "Multi-agent planner for large implementation tasks. Produces numbered plan files covering research, review, and parallel execution phases.",
+  "version": "1.0.0",
+  "author": { "name": "Eric Schoffstall", "email": "yo@contra.io", "url": "https://contra.io" },
+  "keywords": ["planning", "multi-agent", "research", "execution", "orchestration"],
+  "skills": ["./skills/deep-planner"]
+}

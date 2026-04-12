@@ -1,0 +1,9 @@
+{
+  "$schema": "https://raw.githubusercontent.com/hesreallyhim/claude-code-json-schema/main/schemas/plugin.schema.json",
+  "name": "dev-workflow",
+  "description": "Drives a feature from requirements to merged PR: planning, parallel implementation, review, audit, and landing.",
+  "version": "1.0.0",
+  "author": { "name": "Eric Schoffstall", "email": "yo@contra.io", "url": "https://contra.io" },
+  "keywords": ["workflow", "feature", "orchestration", "plan", "review", "pr", "merge", "audit"],
+  "skills": ["./skills/dev-workflow"]
+}

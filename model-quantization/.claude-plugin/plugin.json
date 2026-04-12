@@ -1,0 +1,9 @@
+{
+  "$schema": "https://raw.githubusercontent.com/hesreallyhim/claude-code-json-schema/main/schemas/plugin.schema.json",
+  "name": "model-quantization",
+  "description": "Model quantization and format conversion across AWQ, GPTQ, GGUF, ONNX, CoreML, ExecuTorch, and HuggingFace.",
+  "version": "1.0.0",
+  "author": { "name": "Eric Schoffstall", "email": "yo@contra.io", "url": "https://contra.io" },
+  "keywords": ["quantization", "gguf", "awq", "gptq", "onnx", "conversion", "mobile"],
+  "skills": ["./skills/model-quantization"]
+}

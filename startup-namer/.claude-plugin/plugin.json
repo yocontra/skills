@@ -1,0 +1,9 @@
+{
+  "$schema": "https://raw.githubusercontent.com/hesreallyhim/claude-code-json-schema/main/schemas/plugin.schema.json",
+  "name": "startup-namer",
+  "description": "Brainstorms startup names and checks viability: domain availability, trademark conflicts, SEO potential, WHOIS data, and domain hacks.",
+  "version": "1.0.0",
+  "author": { "name": "Eric Schoffstall", "email": "yo@contra.io", "url": "https://contra.io" },
+  "keywords": ["startup", "naming", "domains", "trademark", "seo", "branding"],
+  "skills": ["./skills/startup-namer"]
+}

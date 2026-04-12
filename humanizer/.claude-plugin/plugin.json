@@ -1,0 +1,9 @@
+{
+  "$schema": "https://raw.githubusercontent.com/hesreallyhim/claude-code-json-schema/main/schemas/plugin.schema.json",
+  "name": "humanizer",
+  "description": "Editing pass that strips AI-generated writing patterns: inflated language, promotional filler, giveaway vocabulary, and lifeless structure.",
+  "version": "1.0.0",
+  "author": { "name": "Eric Schoffstall", "email": "yo@contra.io", "url": "https://contra.io" },
+  "keywords": ["writing", "editing", "ai-detection", "humanize", "text"],
+  "skills": ["./skills/humanizer"]
+}

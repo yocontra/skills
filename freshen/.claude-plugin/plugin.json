@@ -1,0 +1,9 @@
+{
+  "$schema": "https://raw.githubusercontent.com/hesreallyhim/claude-code-json-schema/main/schemas/plugin.schema.json",
+  "name": "freshen",
+  "description": "Parallel agents scan for stale comments, docstrings, TODOs, and docs, then correct factual inaccuracies automatically.",
+  "version": "1.0.0",
+  "author": { "name": "Eric Schoffstall", "email": "yo@contra.io", "url": "https://contra.io" },
+  "keywords": ["comments", "docs", "stale", "cleanup", "docstrings", "todo"],
+  "skills": ["./skills/freshen"]
+}

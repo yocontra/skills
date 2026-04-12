@@ -1,0 +1,9 @@
+{
+  "$schema": "https://raw.githubusercontent.com/hesreallyhim/claude-code-json-schema/main/schemas/plugin.schema.json",
+  "name": "asset-gen",
+  "description": "Generate images, sound effects, music, video, SVGs, and 3D models through Gemini, ElevenLabs, and Meshy AI.",
+  "version": "1.0.0",
+  "author": { "name": "Eric Schoffstall", "email": "yo@contra.io", "url": "https://contra.io" },
+  "keywords": ["assets", "images", "audio", "video", "3d", "generation", "ai"],
+  "skills": ["./skills/asset-gen"]
+}

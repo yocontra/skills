@@ -1,0 +1,9 @@
+{
+  "$schema": "https://raw.githubusercontent.com/hesreallyhim/claude-code-json-schema/main/schemas/plugin.schema.json",
+  "name": "graphite",
+  "description": "Stacked PR workflow through the Graphite CLI. Creates branches, submits PRs, merges, syncs, and manages stacks via gt.",
+  "version": "1.0.0",
+  "author": { "name": "Eric Schoffstall", "email": "yo@contra.io", "url": "https://contra.io" },
+  "keywords": ["graphite", "stacked-prs", "git", "pull-requests", "branches", "code-review"],
+  "skills": ["./skills/graphite"]
+}

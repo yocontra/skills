@@ -1,0 +1,9 @@
+{
+  "$schema": "https://raw.githubusercontent.com/hesreallyhim/claude-code-json-schema/main/schemas/plugin.schema.json",
+  "name": "android-acceleration",
+  "description": "On-device AI inference for Android targeting NPUs, GPUs, and DSPs. Covers ExecuTorch, QNN, NeuroPilot, LiteRT, ONNX Runtime Mobile, and Gemini Nano.",
+  "version": "1.0.0",
+  "author": { "name": "Eric Schoffstall", "email": "yo@contra.io", "url": "https://contra.io" },
+  "keywords": ["android", "inference", "npu", "acceleration", "executorch", "qualcomm", "mediatek"],
+  "skills": ["./skills/android-acceleration"]
+}

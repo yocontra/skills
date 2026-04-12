@@ -1,0 +1,9 @@
+{
+  "$schema": "https://raw.githubusercontent.com/hesreallyhim/claude-code-json-schema/main/schemas/plugin.schema.json",
+  "name": "bug-audit",
+  "description": "Adversarial bug-finding with parallel hunter/skeptic/referee trios. Catches logic errors, race conditions, edge cases, and other quality problems.",
+  "version": "1.0.0",
+  "author": { "name": "Eric Schoffstall", "email": "yo@contra.io", "url": "https://contra.io" },
+  "keywords": ["bugs", "audit", "code-quality", "adversarial", "logic-errors", "race-conditions"],
+  "skills": ["./skills/bug-audit"]
+}

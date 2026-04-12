@@ -1,0 +1,9 @@
+{
+  "$schema": "https://raw.githubusercontent.com/hesreallyhim/claude-code-json-schema/main/schemas/plugin.schema.json",
+  "name": "perf-audit",
+  "description": "Performance counterpart to bug-audit, using the same adversarial hunter/skeptic/referee trios. Targets slow queries, memory leaks, N+1s, and scalability bottlenecks.",
+  "version": "1.0.0",
+  "author": { "name": "Eric Schoffstall", "email": "yo@contra.io", "url": "https://contra.io" },
+  "keywords": ["performance", "audit", "memory-leaks", "n-plus-one", "optimization", "profiling"],
+  "skills": ["./skills/perf-audit"]
+}
