@@ -1,0 +1,9 @@
+{
+  "$schema": "https://raw.githubusercontent.com/hesreallyhim/claude-code-json-schema/main/schemas/plugin.schema.json",
+  "name": "skill-improver",
+  "description": "Review and iteratively improve Claude Code skill files. Catches structural issues, unclear instructions, missing edge cases, and prompt anti-patterns.",
+  "version": "1.0.0",
+  "author": { "name": "Eric Schoffstall", "email": "yo@contra.io", "url": "https://contra.io" },
+  "keywords": ["skills", "review", "quality", "meta", "improvement"],
+  "skills": ["./skills/skill-improver"]
+}

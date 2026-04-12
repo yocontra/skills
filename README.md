@@ -10,7 +10,7 @@ A collection of personal [Claude Code](https://docs.anthropic.com/en/docs/claude
 |--------|--------------|--------------|
 | **[bug-audit](./bug-audit)** | `/bug-audit` | Hunts bugs using adversarial hunter/skeptic/referee trios in parallel. Catches logic errors, race conditions, and edge cases. |
 | **[perf-audit](./perf-audit)** | `/perf-audit` | Same adversarial trio structure, but focused on performance: slow queries, memory leaks, N+1s, scalability bottlenecks. |
-| **[exploit-finder](./exploit-finder)** | `/exploit-finder` | Finds security vulnerabilities and builds proof-of-concept exploits. For pentesting, CTFs, and authorized security research only. |
+| **[exploit-finder](./exploit-finder)** | `/exploit-finder` | Adversarial vulnerability research with parallel finder/disprover/referee agents. White-box (source) and black-box (pentesting) modes. Covers web, mobile, smart contracts, kernels, IoT, CI/CD, cloud, and more. |
 | **[code-simplify](./code-simplify)** | `/code-simplify` | Reviews recent code changes and cleans up reuse, quality, and efficiency problems. |
 | **[exhaustive-search](./exhaustive-search)** | `/exhaustive-search` | Searches an entire space with parallel agent teams. Every item gets checked, no sampling, no skipping. |
 
@@ -44,6 +44,13 @@ A collection of personal [Claude Code](https://docs.anthropic.com/en/docs/claude
 | **[coreml-optimization](./coreml-optimization)** | `/coreml-optimization` | Targets Apple's Neural Engine on iOS/macOS. Handles conversion, ANE layout, split einsum, and quantization. |
 | **[android-acceleration](./android-acceleration)** | `/android-acceleration` | Runs AI models on Android hardware (NPUs, GPUs, DSPs) via ExecuTorch, QNN, NeuroPilot, LiteRT, ONNX Runtime Mobile. |
 | **[ios-debugging](./ios-debugging)** | `/ios-debugging` | Works with iOS simulators: launch apps, navigate screens, inspect UI, read logs. Supports Expo, React Native, and native Swift. |
+
+### Meta & Tooling
+
+| Plugin | Slash Command | What it does |
+|--------|--------------|--------------|
+| **[gh-cli](./gh-cli)** | — | Routes GitHub operations through the authenticated `gh` CLI. Avoids rate limits, private repo 404s, and incomplete API responses. |
+| **[skill-improver](./skill-improver)** | `/skill-improver` | Reviews and iteratively improves Claude Code skill files. Catches structural issues, unclear instructions, and prompt anti-patterns. |
 
 ### Other
 
@@ -80,7 +87,7 @@ cp -r skills/bug-audit ~/.claude/plugins/bug-audit
 ```bash
 git clone https://github.com/yocontra/skills.git
 cd skills
-for plugin in android-acceleration asset-gen bug-audit code-simplify coreml-optimization deep-planner dev-workflow exhaustive-search exploit-finder freshen graphite humanizer ios-debugging model-quantization perf-audit startup-namer worktree-manager; do
+for plugin in android-acceleration asset-gen bug-audit code-simplify coreml-optimization deep-planner dev-workflow exhaustive-search exploit-finder freshen gh-cli graphite humanizer ios-debugging model-quantization perf-audit skill-improver startup-namer worktree-manager; do
   cp -r "$plugin" ~/.claude/plugins/"$plugin"
 done
 ```
@@ -111,6 +118,7 @@ Each skill is triggered by slash command or natural language:
 /android-acceleration          # Deploy to Android NPUs
 /ios-debugging                 # Debug on iOS simulator
 /startup-namer                 # Brainstorm startup names
+/skill-improver [path]         # Review and improve a skill file
 ```
 
 Or just describe what you want:
@@ -136,6 +144,8 @@ Or just describe what you want:
 - **graphite** requires the [Graphite CLI](https://graphite.dev/docs/installing-the-cli) (`gt`)
 - **startup-namer** requires web access for domain/trademark lookups
 - **asset-gen** requires API keys for Gemini, ElevenLabs, and/or Meshy AI
+- **exploit-finder** black-box mode benefits from [Kali Linux in a container](./exploit-finder/skills/exploit-finder/reference/kali-container-setup.md) for advanced pentesting
+- **gh-cli** requires the [GitHub CLI](https://cli.github.com/) (`gh auth login`)
 
 ## License
 
