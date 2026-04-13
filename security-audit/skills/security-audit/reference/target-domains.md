@@ -23,7 +23,49 @@ Domain-specific attack classes, tools, and entry points.
 - All `public`/`external` functions, especially those handling funds
 - Proxy upgrade functions, governance proposals, oracle update functions
 
+## Electron / Desktop Apps
+
+### Electron
+- **nodeIntegration + XSS = RCE** — if `nodeIntegration: true` or `contextIsolation: false`, any XSS gives full Node.js access
+- **Preload script abuse** — overly permissive bridge APIs exposed to renderer via `contextBridge`
+- **IPC handler injection** — `ipcMain.handle` accepting unsanitized arguments for file/shell/DB operations
+- **shell.openExternal** — user-controlled URLs passed to OS shell (command injection on all platforms)
+- **Protocol handler vulnerabilities** — custom `app://` or `file://` protocols with path traversal
+- **Update mechanism** — Squirrel/electron-updater MITM if not pinning signatures
+- **webSecurity: false** — disables same-origin policy, enables cross-origin data theft
+- **Chromium CVEs** — Electron bundles a specific Chromium version; check for known vulns in that version
+- **ASAR integrity** — no signing by default; local attacker can replace app.asar
+
+### Native desktop (Windows)
+- **DLL hijacking** — application loading DLLs from writable directories (CWD, PATH, side-by-side)
+- **DLL search order abuse** — missing DLLs in the search path, phantom DLL loading
+- **COM object hijacking** — CLSID registry keys pointing to attacker-controlled DLLs
+- **Named pipe impersonation** — services accepting connections on predictable pipe names
+- **Unquoted service paths** — `C:\Program Files\My App\service.exe` parsed as `C:\Program.exe`
+- **Privilege escalation** — services running as SYSTEM with writable binaries or config
+- **Token impersonation** — SeImpersonatePrivilege abuse (Potato family attacks)
+- **Registry key permissions** — writable HKLM keys for autorun, services, COM
+- **Windows Defender exclusions** — exclusion paths discoverable and exploitable
+
+### Native desktop (macOS)
+- **XPC service validation** — missing `shouldAcceptNewConnection` checks, entitlement verification
+- **TCC bypass** — accessing camera/microphone/files without proper authorization
+- **Dylib hijacking** — `@rpath` and `@loader_path` manipulation
+- **Launch agent/daemon injection** — writable plists in `/Library/LaunchAgents/`
+- **Notarization/Gatekeeper bypass** — techniques to run unsigned code
+
 ## Kernel & OS Internals
+
+### Windows kernel & OS
+- **Kernel drivers (.sys)** — IOCTL handlers without input validation, pool overflow, type confusion
+- **Win32k** — GDI/USER object handling, use-after-free in window/menu management
+- **NTFS/ReFS** — filesystem parser bugs, alternate data streams, junction/symlink abuse
+- **Registry** — ACL misconfigurations, symbolic link attacks on registry keys
+- **WMI** — event subscriptions for persistence, provider DLL injection
+- **ETW** — event tracing blind spots, ETW patching for evasion
+- **Print Spooler** — historically rich attack surface (PrintNightmare family)
+- **RPC/DCOM** — interface enumeration, argument marshaling bugs
+- **ALPC** — Advanced Local Procedure Call message handling vulnerabilities
 
 ### Linux kernel
 - **Syscall handlers** — boundary between user/kernel space; type confusion, buffer overflows
@@ -34,17 +76,50 @@ Domain-specific attack classes, tools, and entry points.
 - **Namespace/cgroup escapes** — container breakout primitives
 
 ### macOS / Darwin
-- **XPC services** — missing entitlement checks, message validation failures
+- **XPC services** — missing entitlement checks, message validation failures, `NSXPCConnection` without `auditToken` verification
 - **IOKit drivers** — `externalMethod` handler vulnerabilities, type confusion in user clients
-- **Mach IPC** — port rights leaks, message deserialization bugs
 - **AMFI / code signing** — bypasses that allow unsigned code execution
 - **Sandbox escapes** — Seatbelt profile gaps, TCC bypass
 - **Private Compute (Apple PCC)** — stateless computation guarantees, attestation verification, sealed key hierarchy
+- **Dylib injection** — `DYLD_INSERT_LIBRARIES`, `@rpath` manipulation, interposing
+
+### Mach Ports (high-value attack surface)
+
+Mach ports are the fundamental IPC primitive in macOS/iOS. Every system service communicates via Mach messages. Port rights can be leaked, stolen, or confused — leading to privilege escalation, sandbox escape, and arbitrary code execution.
+
+#### Attack classes
+- **Port name reuse** — deallocated port names can be reallocated by an attacker; if a privileged service sends to a stale name, the attacker receives the message
+- **Task port access** — `task_for_pid` or leaked task ports give full memory read/write on target process
+- **Send right leaks** — services that vend send rights without verifying the receiver's identity
+- **OOL (out-of-line) descriptor confusion** — crafted Mach messages with OOL memory descriptors causing type confusion in receivers
+- **MIG (Mach Interface Generator) bugs** — auto-generated MIG server stubs that mishandle complex message types, leading to UAF or double-free on error paths
+- **Bootstrap service hijacking** — registering a service name before the legitimate service starts
+- **Exception port abuse** — setting exception ports on another process to intercept crashes and read register state
+- **Voucher/recipe attacks** — mach_voucher_attr manipulation for kernel memory corruption
+
+#### What to look for in source code
+- `mach_msg()` calls — trace the message ID (msgh_id) to the MIG subsystem handler
+- `mach_port_deallocate` without clearing the name variable — stale port reuse
+- MIG `.defs` files — check generated server stubs for error paths that leak resources
+- `bootstrap_check_in` / `bootstrap_look_up` — service registration and discovery
+- `mach_port_insert_right` / `mach_port_extract_right` — where are rights transferred?
+- `task_for_pid` callers — who has `SecTaskAccess` entitlement?
+- OOL descriptors in `mach_msg_ool_descriptor_t` — validate type, size, and deallocation
+- Missing `audit_token` verification in XPC connection handlers
+
+#### Tooling
+- `lsmp -p <PID> -v` — enumerate Mach ports, rights, and send counts for a process
+- `launchctl print system` / `launchctl print gui/$(id -u)` — list registered Mach services
+- `mig /path/to/interface.defs` — compile MIG interface definitions to inspect generated stubs
+- `dtrace -n 'mach_msg_trap:entry { ... }'` — trace Mach message syscalls at runtime
+- Frida `mach_msg` hooks — intercept and inspect messages per-process at runtime
+- XNU source (`osfmk/mach/*.defs`) — canonical MIG interface definitions
 
 ### Tools
 - Source code auditing (kernel is open source for Linux, XNU is partially open)
 - syzkaller (Linux kernel fuzzer), kASAN, KFENCE
-- For macOS: `dtrace`, `lldb` with kernel debugging, IOKit fuzzing
+- For macOS: `lsmp`, `dtrace`, `lldb` with kernel debugging, IOKit fuzzing, Frida
+- Mach-specific: `mig` compiler, `launchctl print`, `lsmp -v`, Frida `mach_msg` hooks
 
 ## Network Hardware (IoT, Routers, IP Cameras)
 
@@ -62,6 +137,54 @@ Domain-specific attack classes, tools, and entry points.
 - binwalk, firmware-mod-kit, EMBA (firmware analysis)
 - nmap, masscan for network scanning
 - Ghidra, radare2 for binary analysis of firmware
+
+## Mobile Apps (Expanded)
+
+### iOS
+- **URL scheme hijacking** — registering another app's URL scheme to intercept data
+- **Universal Links** — AASA file misconfiguration, link hijacking
+- **Keychain access groups** — oversharing secrets between apps via shared groups
+- **App Transport Security bypass** — `NSAllowsArbitraryLoads`, per-domain exceptions
+- **WebView injection** — `WKWebView` with `evaluateJavaScript` on user-controlled content
+- **Jailbreak detection bypass** — apps relying on file-existence checks easily bypassed with Frida
+- **Pasteboard sniffing** — sensitive data left on `UIPasteboard.general`
+- **Binary protections** — missing PIE, no stack canaries, no ARC (older apps)
+- **Entitlement abuse** — apps requesting unnecessary capabilities
+
+### Android (expanded)
+- **Intent redirection** — attacker-controlled intents forwarded to private components
+- **Fragment injection** — `PreferenceActivity` exported, attacker loads arbitrary fragments
+- **Tapjacking** — `filterTouchesWhenObscured` not set, overlay attacks
+- **Backup extraction** — `android:allowBackup="true"` leaks app data via `adb backup`
+- **Root detection bypass** — Magisk + Frida bypass most detection schemes
+- **WebView addJavascriptInterface** — reflected XSS → RCE on Android < 4.2
+- **Pending intent hijacking** — mutable PendingIntents intercepted by malicious apps
+
+## API Protocols (Beyond REST)
+
+### GraphQL
+- **Introspection in production** — full schema disclosure (`__schema` query)
+- **Batching attacks** — send thousands of operations in one request (brute-force, DoS)
+- **Nested query DoS** — deeply nested relationships causing exponential DB queries
+- **Field-level authorization** — mutations/queries missing per-field auth checks
+- **Alias-based rate limit bypass** — same query aliased N times in one request
+- **Subscription abuse** — WebSocket subscriptions leaking data without auth checks
+- **Type confusion** — union/interface types returning unexpected fields
+
+### gRPC / Protobuf
+- **Reflection service enabled** — `grpc.reflection.v1alpha` exposes all service definitions
+- **Missing auth on methods** — per-method authorization not enforced
+- **Large message attacks** — no max message size configured, memory exhaustion
+- **Field injection** — unknown fields preserved and forwarded (proto3 behavior)
+- **Streaming abuse** — bidirectional streams without timeout/rate limiting
+- **Insecure channel** — gRPC without TLS (`grpc.insecure_channel`)
+
+### WebSocket
+- **Missing origin validation** — no `Origin` header check on upgrade
+- **No authentication after upgrade** — auth checked on HTTP upgrade but not on subsequent messages
+- **Message injection** — unsanitized messages broadcast to other clients (stored XSS equivalent)
+- **Rate limiting absence** — no throttling on WS messages (DoS, brute-force)
+- **CSWSH (Cross-Site WebSocket Hijacking)** — cookie-authenticated WS endpoints hijackable
 
 ## Open Source Software
 

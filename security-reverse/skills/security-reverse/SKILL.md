@@ -1,6 +1,6 @@
 ---
 name: security-reverse
-description: Decompile binaries (ELF, PE, Mach-O, firmware) to C using Ghidra headless analysis for security auditing.
+description: Decompile binaries and managed code (ELF, PE, Mach-O, Java, .NET, obfuscated JS) to source for security auditing.
 user-invocable: true
 argument-hint: "[path to binary file]"
 allowed-tools: Agent, Read, Glob, Grep, Write, Bash
@@ -14,7 +14,8 @@ Decompile binaries to C using Ghidra's headless analyzer, then hand off to `secu
 
 ## Supported Formats
 
-ELF (Linux), PE (Windows), Mach-O (macOS/iOS), APK (Android — extract native libs first), firmware blobs.
+**Native (→ C via Ghidra):** ELF (Linux), PE (Windows), Mach-O (macOS/iOS), firmware blobs, kernel modules (.ko, .kext, .sys).
+**Managed (→ source via dedicated tools):** Java .jar/.class, Android APK/DEX, .NET DLL/EXE (MSIL), obfuscated JavaScript, Electron apps (.asar), iOS apps (.ipa), WebAssembly (.wasm).
 
 ## Pipeline
 
@@ -63,6 +64,26 @@ Everything in the `security-audit` attack surface applies, plus:
 - **GOT/PLT entries** — overwriting these is a common exploitation primitive
 - **Custom allocators** — look for use-after-free and double-free
 - **Hardcoded strings** — search for passwords, API keys, crypto constants
+
+## Managed Language Decompilation
+
+Ghidra handles native binaries. For managed/interpreted languages, use purpose-built decompilers that recover near-original source — class names, method signatures, string literals, and exception handling intact.
+
+| Target | Tool | Install |
+|--------|------|---------|
+| Java .jar/.class | CFR | `brew install cfr-decompiler` |
+| Android APK/DEX | JADX | `brew install jadx` |
+| .NET DLL/EXE | ilspycmd | `dotnet tool install -g ilspycmd` |
+| .NET (debugging/IL edit) | dnSpy | Windows only — use dockur/windows container |
+| JS (obfuscated bundles) | webcrack | `npm install -g webcrack` |
+| JS (obfuscator.io) | synchrony | `npm install -g deobfuscator` |
+| Electron app (.asar) | asar extract + webcrack | `npm install -g @electron/asar` |
+| iOS app (.ipa) | class-dump + Ghidra | `brew install class-dump` |
+| WebAssembly (.wasm) | wasm-decompile / wasm2c | `brew install wabt` |
+
+See `reference/managed-decompilers.md` for full usage, flags, and when-to-use-which guidance.
+
+After decompiling, hand off to `security-audit` the same way as Ghidra output — the adversarial trio works on recovered source identically.
 
 ## pyghidra (Python Alternative)
 

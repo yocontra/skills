@@ -21,6 +21,45 @@ Finders check all applicable classes, not just the obvious ones.
 | **GraphQL introspection** | Introspection enabled in production, exposing schema |
 | **ReDoS** | User input matched against regex with catastrophic backtracking |
 
+## GraphQL
+
+| Class | What to look for |
+|-------|-----------------|
+| **Introspection enabled** | `__schema` / `__type` queries returning full schema in production |
+| **Batching / aliasing abuse** | Multiple operations or aliases in one request bypassing rate limits |
+| **Nested query depth** | Deeply nested relationships causing exponential resolver calls (DoS) |
+| **Field-level auth gaps** | Mutations/fields accessible without proper authorization checks |
+| **Subscription data leaks** | WebSocket subscriptions returning data the user shouldn't see |
+
+## gRPC / Protobuf
+
+| Class | What to look for |
+|-------|-----------------|
+| **Reflection enabled** | `grpc.reflection.v1alpha` exposing all service definitions |
+| **Missing per-method auth** | Authorization checked at connection but not per RPC method |
+| **Unbounded messages** | No `MaxRecvMsgSize` — attacker sends huge messages (OOM) |
+| **Streaming abuse** | Bidirectional streams without timeout or rate limiting |
+
+## WebSocket
+
+| Class | What to look for |
+|-------|-----------------|
+| **CSWSH** | Cookie-authenticated WebSocket endpoints hijackable cross-site (no Origin check) |
+| **Post-upgrade auth gap** | Auth checked on HTTP upgrade but not on subsequent WS messages |
+| **Message injection** | Unsanitized messages broadcast to other clients |
+
+## Electron / Desktop
+
+| Class | What to look for |
+|-------|-----------------|
+| **nodeIntegration RCE** | `nodeIntegration: true` or `contextIsolation: false` — any XSS = full Node.js |
+| **IPC handler injection** | `ipcMain.handle` passing unsanitized args to shell/fs/db operations |
+| **shell.openExternal** | User-controlled URLs reaching OS shell |
+| **DLL hijacking** | (Windows) Application loading DLLs from writable directories |
+| **Named pipe impersonation** | (Windows) Services on predictable pipe names |
+| **Mach port abuse** | (macOS) Leaked send rights, port name reuse, MIG stub bugs |
+| **Dylib hijacking** | (macOS) `@rpath` / `DYLD_INSERT_LIBRARIES` manipulation |
+
 ## Authentication & Authorization
 
 | Class | What to look for |
@@ -107,10 +146,14 @@ Finders check all applicable classes, not just the obvious ones.
 
 | Class | What to look for |
 |-------|-----------------|
-| **Insecure data storage** | Sensitive data in SharedPreferences/UserDefaults without encryption |
+| **Insecure data storage** | Sensitive data in SharedPreferences/UserDefaults/Keychain without encryption |
 | **Certificate pinning bypass** | Missing or weak cert pinning, debug trust stores in production |
-| **Deep link hijacking** | Unvalidated deep link parameters, intent redirection |
+| **Deep link hijacking** | Unvalidated deep link/URL scheme/Universal Link parameters |
 | **Exported components** | Android activities/services/receivers exported without permission checks |
+| **Intent redirection** | Attacker-controlled intents forwarded to private components |
+| **WebView RCE** | `addJavascriptInterface` (Android < 4.2), `evaluateJavaScript` with user input |
+| **Backup extraction** | `android:allowBackup="true"`, iOS unencrypted backups leaking app data |
+| **Pasteboard sniffing** | Sensitive data left on shared clipboard/pasteboard |
 
 ## Business Logic
 
