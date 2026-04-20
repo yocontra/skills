@@ -1,0 +1,160 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "skills",
+  "version": "1.0.0",
+  "description": "Personal collection of Claude Code plugins: adversarial audits, planning workflows, asset generation, on-device ML, and more.",
+  "owner": {
+    "name": "Eric Schoffstall",
+    "email": "yo@contra.io",
+    "url": "https://contra.io"
+  },
+  "plugins": [
+    {
+      "name": "bug-audit",
+      "description": "Adversarial bug-finding with parallel hunter/skeptic/referee trios. Catches logic errors, race conditions, edge cases, and other quality problems.",
+      "source": "./bug-audit",
+      "category": "code-quality",
+      "keywords": ["bugs", "audit", "adversarial", "logic-errors", "race-conditions"]
+    },
+    {
+      "name": "perf-audit",
+      "description": "Performance counterpart to bug-audit, using the same adversarial hunter/skeptic/referee trios. Targets slow queries, memory leaks, N+1s, and scalability bottlenecks.",
+      "source": "./perf-audit",
+      "category": "code-quality",
+      "keywords": ["performance", "audit", "memory-leaks", "n-plus-one", "optimization"]
+    },
+    {
+      "name": "security-audit",
+      "description": "Adversarial white-box vulnerability research — finders, disprovers, referees audit source code for novel exploitable bugs.",
+      "source": "./security-audit",
+      "category": "security",
+      "keywords": ["security", "vulnerabilities", "audit", "source-code", "white-box"]
+    },
+    {
+      "name": "security-pentest",
+      "description": "Adversarial black-box penetration testing — finders, disprovers, referees probe live targets for exploitable vulnerabilities.",
+      "source": "./security-pentest",
+      "category": "security",
+      "keywords": ["security", "pentesting", "black-box", "vulnerabilities", "penetration-testing"]
+    },
+    {
+      "name": "security-reverse",
+      "description": "Binary reverse engineering — decompile ELF, PE, Mach-O, and firmware binaries to C using Ghidra for security auditing.",
+      "source": "./security-reverse",
+      "category": "security",
+      "keywords": ["security", "reverse-engineering", "ghidra", "binary", "decompilation"]
+    },
+    {
+      "name": "code-simplify",
+      "description": "Reviews recent code changes for dead code, missed abstractions, readability issues, and inefficiencies, then fixes what it finds.",
+      "source": "./code-simplify",
+      "category": "code-quality",
+      "keywords": ["refactoring", "simplification", "code-quality", "readability"]
+    },
+    {
+      "name": "exhaustive-search",
+      "description": "Parallel agent teams that search an entire space exhaustively. Every item gets checked, nothing sampled or skipped.",
+      "source": "./exhaustive-search",
+      "category": "code-quality",
+      "keywords": ["exhaustive", "search", "systematic", "coverage", "parallel"]
+    },
+    {
+      "name": "deep-planner",
+      "description": "Multi-agent planner for large implementation tasks. Produces numbered plan files covering research, review, and parallel execution phases.",
+      "source": "./deep-planner",
+      "category": "workflow",
+      "keywords": ["planning", "multi-agent", "research", "orchestration"]
+    },
+    {
+      "name": "dev-workflow",
+      "description": "Drives a feature from requirements to merged PR: planning, parallel implementation, review, audit, and landing.",
+      "source": "./dev-workflow",
+      "category": "workflow",
+      "keywords": ["workflow", "feature", "orchestration", "pr", "merge"]
+    },
+    {
+      "name": "worktree-manager",
+      "description": "Manage git worktrees so multiple agents can work on the same repo in parallel without stepping on each other.",
+      "source": "./worktree-manager",
+      "category": "workflow",
+      "keywords": ["worktree", "git", "parallel", "isolation", "concurrent"]
+    },
+    {
+      "name": "graphite",
+      "description": "Stacked PR workflow through the Graphite CLI. Creates branches, submits PRs, merges, syncs, and manages stacks via gt.",
+      "source": "./graphite",
+      "category": "workflow",
+      "keywords": ["graphite", "stacked-prs", "git", "pull-requests", "code-review"]
+    },
+    {
+      "name": "humanizer",
+      "description": "Editing pass that strips AI-generated writing patterns: inflated language, promotional filler, giveaway vocabulary, and lifeless structure.",
+      "source": "./humanizer",
+      "category": "writing",
+      "keywords": ["writing", "editing", "ai-detection", "humanize", "text"]
+    },
+    {
+      "name": "freshen",
+      "description": "Parallel agents scan for stale comments, docstrings, TODOs, and docs, then correct factual inaccuracies automatically.",
+      "source": "./freshen",
+      "category": "writing",
+      "keywords": ["comments", "docs", "stale", "cleanup", "docstrings"]
+    },
+    {
+      "name": "asset-gen",
+      "description": "Generate images, sound effects, music, video, SVGs, and 3D models through Gemini, ElevenLabs, and Meshy AI.",
+      "source": "./asset-gen",
+      "category": "assets",
+      "keywords": ["assets", "images", "audio", "video", "3d", "generation"]
+    },
+    {
+      "name": "model-quantization",
+      "description": "Model quantization and format conversion across AWQ, GPTQ, GGUF, ONNX, CoreML, ExecuTorch, and HuggingFace.",
+      "source": "./model-quantization",
+      "category": "mobile-ml",
+      "keywords": ["quantization", "gguf", "awq", "gptq", "onnx", "mobile"]
+    },
+    {
+      "name": "coreml-optimization",
+      "description": "Apple Neural Engine optimization for iOS and macOS, including model conversion, ANE targeting, split einsum, quantization, and on-device deployment.",
+      "source": "./coreml-optimization",
+      "category": "mobile-ml",
+      "keywords": ["coreml", "apple", "neural-engine", "ios", "macos", "ane"]
+    },
+    {
+      "name": "android-acceleration",
+      "description": "On-device AI inference for Android targeting NPUs, GPUs, and DSPs. Covers ExecuTorch, QNN, NeuroPilot, LiteRT, ONNX Runtime Mobile, and Gemini Nano.",
+      "source": "./android-acceleration",
+      "category": "mobile-ml",
+      "keywords": ["android", "inference", "npu", "executorch", "qualcomm", "mediatek"]
+    },
+    {
+      "name": "ios-debugging",
+      "description": "iOS simulator control: launching apps, navigating screens, inspecting UI, and reading logs. Works with Expo, React Native, and native Swift.",
+      "source": "./ios-debugging",
+      "category": "mobile-ml",
+      "keywords": ["ios", "simulator", "debugging", "react-native", "expo", "swift"]
+    },
+    {
+      "name": "gh-cli",
+      "description": "Route GitHub operations through authenticated gh CLI instead of web fetches. Fixes rate limits and private repo 404s.",
+      "source": "./gh-cli",
+      "category": "tooling",
+      "keywords": ["github", "gh", "cli", "api", "authentication"]
+    },
+    {
+      "name": "skill-improver",
+      "description": "Review and fix Claude Code skill files. Catches broken frontmatter, ambiguous instructions, and prompt anti-patterns.",
+      "source": "./skill-improver",
+      "category": "tooling",
+      "keywords": ["skills", "review", "quality", "meta"]
+    },
+    {
+      "name": "startup-namer",
+      "description": "Brainstorms startup names and checks viability: domain availability, trademark conflicts, SEO potential, WHOIS data, and domain hacks.",
+      "source": "./startup-namer",
+      "category": "other",
+      "keywords": ["startup", "naming", "domains", "trademark", "branding"]
+    }
+  ]
+}

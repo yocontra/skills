@@ -77,26 +77,40 @@ plugin-name/
 
 ## Installation
 
-### Install a single plugin
+This repo is a [Claude Code plugin marketplace](https://code.claude.com/docs/en/plugin-marketplaces). Add it once, then install any plugins you want.
 
-```bash
-git clone https://github.com/yocontra/skills.git
-cp -r skills/bug-audit ~/.claude/plugins/bug-audit
+### Add the marketplace
+
+In Claude Code:
+
+```
+/plugin marketplace add yocontra/skills
 ```
 
-### Install all plugins
+### Install a plugin
 
-```bash
-git clone https://github.com/yocontra/skills.git
-cd skills
-for plugin in android-acceleration asset-gen bug-audit code-simplify coreml-optimization deep-planner dev-workflow exhaustive-search freshen gh-cli graphite humanizer ios-debugging model-quantization perf-audit security-audit security-pentest security-reverse skill-improver startup-namer worktree-manager; do
-  cp -r "$plugin" ~/.claude/plugins/"$plugin"
-done
+```
+/plugin install bug-audit@skills
+```
+
+Swap `bug-audit` for any plugin name from the tables above. Tab completion works after `@skills`.
+
+### Install everything
+
+```
+/plugin install bug-audit@skills perf-audit@skills security-audit@skills security-pentest@skills security-reverse@skills code-simplify@skills exhaustive-search@skills deep-planner@skills dev-workflow@skills worktree-manager@skills graphite@skills humanizer@skills freshen@skills asset-gen@skills model-quantization@skills coreml-optimization@skills android-acceleration@skills ios-debugging@skills gh-cli@skills skill-improver@skills startup-namer@skills
+```
+
+### Manage
+
+```
+/plugin marketplace update skills   # pull latest plugin versions
+/plugin                             # browse, enable, disable, uninstall
 ```
 
 ### Verify
 
-Open Claude Code and type `/` -- you should see your installed skills in the autocomplete list.
+Open Claude Code and type `/` -- installed plugins show up in the slash-command autocomplete.
 
 ## Usage
 
