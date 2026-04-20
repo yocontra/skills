@@ -1,6 +1,6 @@
 ---
 name: deep-planner
-description: Research-driven planning for large multi-agent tasks. Produces numbered plan files, runs review rounds against reference implementations, and coordinates parallel execution with built-in audit passes.
+description: Research-driven planning for large multi-agent tasks. Produces numbered plan files, runs review rounds against reference implementations, and coordinates parallel execution with built-in audit passes. Use when the task spans multiple files or systems and needs research plus review before implementation — large features, refactors, migrations, or anything the user calls "a big change."
 ---
 
 $ARGUMENTS

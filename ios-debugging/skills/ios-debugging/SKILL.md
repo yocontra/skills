@@ -2,8 +2,10 @@
 name: ios-debugging
 description: |
   Debug, test, and interact with the iOS simulator: launch apps, navigate screens,
-  inspect UI state, read logs, and verify behavior.
-  Works with Expo, bare React Native, native Swift/UIKit, and other iOS apps.
+  inspect UI state, read logs, and verify behavior. Works with Expo, bare React
+  Native, native Swift/UIKit, and other iOS apps. Use when the user wants to run
+  or verify an iOS app behavior, reproduce a simulator bug, take simulator
+  screenshots, or watch simulator logs during development.
 ---
 
 $ARGUMENTS

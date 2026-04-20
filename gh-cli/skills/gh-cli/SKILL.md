@@ -1,6 +1,6 @@
 ---
 name: gh-cli
-description: Route GitHub operations through authenticated gh CLI instead of web fetches. Fixes rate limits and private repo 404s.
+description: Route GitHub operations through authenticated gh CLI instead of web fetches. Fixes rate limits and private repo 404s. Use whenever Claude would otherwise WebFetch github.com or raw.githubusercontent.com — reading repos, PRs, issues, releases, workflow runs, or any GitHub API data.
 user-invocable: false
 allowed-tools: Bash, Read, Grep, Glob
 ---

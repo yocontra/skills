@@ -1,6 +1,6 @@
 ---
 name: worktree-manager
-description: "Set up isolated git worktrees for multiple agents working on the same repo in parallel."
+description: "Set up isolated git worktrees for multiple agents working on the same repo in parallel. Use when spawning multiple parallel agents on one repo, when the user asks about git worktrees, or before launching concurrent edits that would collide on one working copy."
 ---
 
 $ARGUMENTS

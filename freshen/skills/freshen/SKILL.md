@@ -1,6 +1,6 @@
 ---
 name: freshen
-description: "Find and fix stale comments, docstrings, TODOs, and docs across the codebase using parallel agents."
+description: "Find and fix stale comments, docstrings, TODOs, and docs across the codebase using parallel agents. Use when the user suspects comments or docs have drifted from the code, asks to audit documentation, or wants stale TODOs resolved."
 ---
 
 $ARGUMENTS

@@ -1,6 +1,6 @@
 ---
 name: startup-namer
-description: Generate and validate startup names. Checks domain availability, trademarks, SEO viability, WHOIS for purchasable domains, and domain hacks.
+description: Generate and validate startup names. Checks domain availability, trademarks, SEO viability, WHOIS for purchasable domains, and domain hacks. Use when the user is brainstorming company/product/app names and wants domain, trademark, and SEO checks handled automatically.
 user-invocable: true
 argument-hint: "[optional: startup description or name idea]"
 allowed-tools: AskUserQuestion, WebSearch, WebFetch, Bash, Read, Write

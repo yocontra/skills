@@ -1,6 +1,6 @@
 ---
 name: security-audit
-description: Adversarial white-box vulnerability research — finders hunt bugs in source code, disprovers try to kill every finding, referees make the final call.
+description: Adversarial white-box vulnerability research — finders hunt bugs in source code, disprovers try to kill every finding, referees make the final call. Use when auditing source code you can read for exploitable security bugs, or when the user asks for a security review, vulnerability audit, or bug bounty prep on their own codebase.
 user-invocable: true
 argument-hint: "[path to codebase or source files]"
 allowed-tools: Agent, Read, Glob, Grep, Write, Bash

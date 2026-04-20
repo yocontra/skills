@@ -1,6 +1,6 @@
 ---
 name: perf-audit
-description: Audit a codebase for performance issues, slow queries, memory leaks, N+1 problems, blocking operations, and scalability bottlenecks.
+description: Audit a codebase for performance issues, slow queries, memory leaks, N+1 problems, blocking operations, and scalability bottlenecks. Use when the user suspects slowness, reports a perf regression, or wants a systematic hunt for performance problems before release.
 ---
 
 $ARGUMENTS

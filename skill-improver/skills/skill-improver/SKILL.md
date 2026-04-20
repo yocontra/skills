@@ -1,6 +1,6 @@
 ---
 name: skill-improver
-description: Review and fix Claude Code skill files. Catches broken frontmatter, ambiguous instructions, and prompt anti-patterns.
+description: Review and fix Claude Code skill files. Catches broken frontmatter, ambiguous instructions, and prompt anti-patterns. Use when the user wants a SKILL.md or plugin directory audited — "review my skill", "check this skill", "improve this skill", or when touching a SKILL.md in the session.
 user-invocable: true
 argument-hint: "[path to SKILL.md or plugin directory]"
 allowed-tools: Read, Glob, Grep, Write, Edit, Agent, AskUserQuestion

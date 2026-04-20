@@ -2,7 +2,9 @@
 name: asset-gen
 description: |
   Generate images, sound effects, music, video, SVGs, and 3D models via AI APIs
-  (Google Gemini, ElevenLabs, Meshy AI).
+  (Google Gemini, ElevenLabs, Meshy AI). Use when the user asks to create
+  images, sound effects, music, video, SVGs, or 3D models — app icons, UI
+  assets, album art, sound FX, game assets, splash screens, or marketing visuals.
 user-invocable: true
 argument-hint: "[type: image | sound | music | video | svg | 3d] [prompt or options]"
 allowed-tools: Bash, Read, Write, WebFetch
@@ -60,11 +62,14 @@ MESHY_API_KEY=your_meshy_api_key
 
 ### Dependencies
 
-Scripts require [Bun](https://bun.sh) and a few npm packages:
+Scripts require [Bun](https://bun.sh). Dependencies (`@google/genai`, `sharp`) are pinned in the plugin's `package.json`. Install them once inside the plugin directory:
 
 ```bash
-bun add -d @google/genai sharp  # for image generation
+cd "$(dirname "$(realpath scripts/generate-image.ts)")/.."  # plugin root
+bun install
 ```
+
+When installed via the marketplace, the plugin directory is under `~/.claude/plugins/<marketplace>/plugins/asset-gen/` (or similar — check `/plugin` for the exact path).
 
 For SVG tracing, install [potrace](https://potrace.sourceforge.net/) and [ImageMagick](https://imagemagick.org/):
 

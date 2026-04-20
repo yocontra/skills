@@ -1,6 +1,6 @@
 ---
 name: graphite
-description: Manage stacked PRs with the Graphite CLI (gt). Handles branch creation, PR submission, merging, syncing, and stack management.
+description: Manage stacked PRs with the Graphite CLI (gt). Handles branch creation, PR submission, merging, syncing, and stack management. Use when creating, stacking, submitting, or merging PRs with gt, or when the user mentions stacked PRs or asks Claude to run gt commands.
 user-invocable: true
 argument-hint: "[action: create | submit | merge | sync | log | modify | restack]"
 allowed-tools: Bash(gt:*), Bash(gh:*), Bash(git:*), Read, Grep, Glob, Agent

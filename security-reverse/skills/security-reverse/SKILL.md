@@ -1,6 +1,6 @@
 ---
 name: security-reverse
-description: Decompile binaries and managed code (ELF, PE, Mach-O, Java, .NET, obfuscated JS) to source for security auditing.
+description: Decompile binaries and managed code (ELF, PE, Mach-O, Java, .NET, obfuscated JS) to source for security auditing. Use when reverse engineering a binary, firmware blob, JAR/DEX/APK, .NET assembly, obfuscated bundle, Electron app, or iOS .ipa for vulnerability research.
 user-invocable: true
 argument-hint: "[path to binary file]"
 allowed-tools: Agent, Read, Glob, Grep, Write, Bash

@@ -1,6 +1,6 @@
 ---
 name: dev-workflow
-description: "End-to-end orchestration for features and bugfixes: parallel agents, code reviews, and PR lifecycle management."
+description: "End-to-end orchestration for features and bugfixes: parallel agents, code reviews, and PR lifecycle management. Use when driving a feature or bugfix from requirements to merged PR, or when the user asks for the full plan → implement → review → ship loop."
 ---
 
 $ARGUMENTS
