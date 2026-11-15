@@ -1,0 +1,35 @@
+{
+  "name": "gh",
+  "version": "1.27.4",
+  "description": "GitHub CLI suite for github.com and GitHub Enterprise. Full PR workflow: open-pr, push, rebase, review, monitor-pr, worktree, plus raw `gh` commands for issues, checks, and GraphQL. Detects host, fork layout, base branch and PR conventions, and cleans up the worktrees, watchers and temp files it creates. Ships pr-watch.sh (block until CI or feedback needs you) and worktree.py (clone-seeded worktrees with safe remove and prune; a PreToolUse hook seeds Claude Code's own).",
+  "author": {
+    "name": "Eric Schoffstall",
+    "url": "https://contra.io"
+  },
+  "skills": [
+    "./skills/gh",
+    "./skills/review",
+    "./skills/push",
+    "./skills/rebase",
+    "./skills/monitor-pr",
+    "./skills/open-pr",
+    "./skills/worktree"
+  ],
+  "keywords": [
+    "github",
+    "gh",
+    "pull-request",
+    "code-review",
+    "ci",
+    "graphql",
+    "rebase",
+    "monitor-pr",
+    "open-pr",
+    "worktree",
+    "parallel",
+    "isolation"
+  ],
+  "homepage": "https://github.com/yocontra/skills/tree/main/plugins/gh",
+  "repository": "https://github.com/yocontra/skills",
+  "license": "MIT"
+}

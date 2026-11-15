@@ -1,0 +1,451 @@
+{
+  "name": "skills",
+  "description": "Claude Code plugins for adversarial code audits, GitHub PR workflows, OpenSpec planning, SRE, engineering management, on-device ML, security research, and asset generation.",
+  "owner": {
+    "name": "Eric Schoffstall",
+    "email": "yo@contra.io",
+    "url": "https://contra.io"
+  },
+  "plugins": [
+    {
+      "name": "agent-cost-report",
+      "description": "Report Claude Code token spend for a project from local session transcripts: main vs subagent split, cache rewrites after idle gaps by cause, tool errors, hook denials, and top sessions.",
+      "source": "./plugins/agent-cost-report",
+      "version": "1.1.1",
+      "author": {
+        "name": "Eric Schoffstall",
+        "url": "https://contra.io"
+      },
+      "keywords": [
+        "cost",
+        "tokens",
+        "claude-code",
+        "cache"
+      ]
+    },
+    {
+      "name": "agent-ready",
+      "description": "Make any repo agent-ready. uplift audits a project read-only (CLIs, auth, MCP servers, env vars, permissions, CI, test/lint/build commands), reports gaps, then applies the CLAUDE.md, settings, hooks and docs changes (--report: read-only).",
+      "source": "./plugins/agent-ready",
+      "version": "0.5.3",
+      "author": {
+        "name": "Eric Schoffstall",
+        "url": "https://contra.io"
+      },
+      "keywords": [
+        "agent-ready",
+        "uplift",
+        "onboarding",
+        "setup",
+        "claude-md",
+        "permissions",
+        "hooks",
+        "mcp",
+        "diagnostics"
+      ]
+    },
+    {
+      "name": "android-acceleration",
+      "description": "Hardware-accelerated on-device AI inference for Android: ExecuTorch with XNNPACK, Qualcomm QNN, MediaTek NeuroPilot and Samsung Exynos, LiteRT and LiteRT-LM, ONNX Runtime Mobile, ML Kit GenAI (Gemini Nano), JNI bridges, fallback and profiling.",
+      "source": "./plugins/android-acceleration",
+      "version": "1.0.0",
+      "author": {
+        "name": "Eric Schoffstall",
+        "url": "https://contra.io"
+      },
+      "keywords": [
+        "android",
+        "inference",
+        "npu",
+        "executorch",
+        "qualcomm",
+        "mediatek",
+        "litert",
+        "quantization"
+      ]
+    },
+    {
+      "name": "asset-gen",
+      "description": "Generate images, sound effects, music, video, SVG icons, and 3D models through Google Gemini, ElevenLabs, and Meshy AI, with post-processing for padding, transparency, and vector tracing.",
+      "source": "./plugins/asset-gen",
+      "version": "2.0.0",
+      "author": {
+        "name": "Eric Schoffstall",
+        "url": "https://contra.io"
+      },
+      "keywords": [
+        "assets",
+        "images",
+        "audio",
+        "video",
+        "svg",
+        "3d",
+        "generation"
+      ]
+    },
+    {
+      "name": "audit",
+      "description": "Adversarial code auditing with hunter/skeptic/referee agents, sized to the target: correctness bugs, performance, and security. audit:exhaustive checks every item in a named set one by one with a coverage proof.",
+      "source": "./plugins/audit",
+      "version": "1.6.4",
+      "author": {
+        "name": "Eric Schoffstall",
+        "url": "https://contra.io"
+      },
+      "keywords": [
+        "audit",
+        "bugs",
+        "performance",
+        "security",
+        "vulnerabilities",
+        "adversarial",
+        "code-review",
+        "race-conditions",
+        "exploits",
+        "exhaustive",
+        "coverage"
+      ]
+    },
+    {
+      "name": "coreml-optimization",
+      "description": "Core ML and Apple Neural Engine optimization for iOS and macOS: coremltools conversion, ANE placement, split einsum attention, palettization and joint compression, stateful KV-cache models, MLComputePlan profiling, and Apple Foundation Models.",
+      "source": "./plugins/coreml-optimization",
+      "version": "1.0.0",
+      "author": {
+        "name": "Eric Schoffstall",
+        "url": "https://contra.io"
+      },
+      "keywords": [
+        "coreml",
+        "apple",
+        "neural-engine",
+        "ane",
+        "ios",
+        "macos",
+        "coremltools"
+      ]
+    },
+    {
+      "name": "gh",
+      "description": "GitHub CLI suite. Full PR workflow: open-pr, push, rebase, review, monitor-pr, worktree, plus raw `gh` commands for issues, checks, and GraphQL. Ships pr-watch.sh (block until CI or feedback needs you), and worktree.py (clone-seeded, prunable worktrees; a PreToolUse hook seeds Claude Code's own).",
+      "source": "./plugins/gh",
+      "version": "1.27.4",
+      "author": {
+        "name": "Eric Schoffstall",
+        "url": "https://contra.io"
+      },
+      "keywords": [
+        "github",
+        "gh",
+        "pull-request",
+        "code-review",
+        "ci",
+        "graphql",
+        "rebase",
+        "monitor-pr",
+        "open-pr",
+        "worktree",
+        "parallel",
+        "isolation"
+      ]
+    },
+    {
+      "name": "graphite",
+      "description": "Stacked PR workflow through the Graphite CLI (gt) \u2014 create, submit, update, restack, sync, and merge stacks, and work review feedback across them.",
+      "source": "./plugins/graphite",
+      "version": "1.0.0",
+      "author": {
+        "name": "Eric Schoffstall",
+        "url": "https://contra.io"
+      },
+      "keywords": [
+        "graphite",
+        "gt",
+        "stacked-prs",
+        "git",
+        "pull-requests",
+        "code-review"
+      ]
+    },
+    {
+      "name": "humanizer",
+      "description": "Writing guide for clearer, more natural prose. Covers 33 readability habits \u2014 inflated language, filler, hedging, repetitive structure, passive voice, intensifiers, clich\u00e9s \u2014 with before/after examples.",
+      "source": "./plugins/humanizer",
+      "version": "2.4.2",
+      "author": {
+        "name": "Eric Schoffstall",
+        "url": "https://contra.io"
+      },
+      "keywords": [
+        "writing",
+        "editing",
+        "style",
+        "prose",
+        "clarity"
+      ]
+    },
+    {
+      "name": "ios-debugging",
+      "description": "iOS simulator control for Expo, React Native and Swift apps: boot, install, launch, deep-link navigation, accessibility-tree inspection, log streaming, location, push and status-bar overrides.",
+      "source": "./plugins/ios-debugging",
+      "version": "1.0.0",
+      "author": {
+        "name": "Eric Schoffstall",
+        "url": "https://contra.io"
+      },
+      "keywords": [
+        "ios",
+        "simulator",
+        "xcrun",
+        "simctl",
+        "idb",
+        "react-native",
+        "expo",
+        "swift"
+      ]
+    },
+    {
+      "name": "manager",
+      "description": "Tools for engineering managers: 1:1 prep in every direction, team health snapshots, retros, annual rollups, new-hire onboarding plans, and your own self-review, built from git, GitHub PRs and issues.",
+      "source": "./plugins/manager",
+      "version": "0.9.4",
+      "author": {
+        "name": "Eric Schoffstall",
+        "url": "https://contra.io"
+      },
+      "keywords": [
+        "manager",
+        "1:1",
+        "1on1",
+        "one-on-one",
+        "prep-1on1",
+        "team-pulse",
+        "skip-level",
+        "skip-level-prep",
+        "retro",
+        "retrospective",
+        "yearly-rollup",
+        "annual-rollup",
+        "onboard-plan",
+        "30-60-90",
+        "interview",
+        "draft",
+        "self-review",
+        "self review",
+        "performance-review",
+        "perf-review",
+        "annual-review"
+      ]
+    },
+    {
+      "name": "model-quantization",
+      "description": "Cross-platform model quantization and format conversion: AWQ, GPTQ, GGUF/llama.cpp, ONNX Runtime, ExecuTorch and LiteRT, plus mobile model selection, memory estimation, and quality validation.",
+      "source": "./plugins/model-quantization",
+      "version": "1.0.0",
+      "author": {
+        "name": "Eric Schoffstall",
+        "url": "https://contra.io"
+      },
+      "keywords": [
+        "quantization",
+        "gguf",
+        "awq",
+        "gptq",
+        "onnx",
+        "executorch",
+        "mobile"
+      ]
+    },
+    {
+      "name": "openspec",
+      "description": "OpenSpec spec-driven planning workflow (propose, explore, apply, update, sync, archive) as skills and /openspec: commands, plus /openspec:setup to adopt it in a repo and migrate existing plans. Wraps the OpenSpec CLI; needs `openspec` on PATH at the version in openspec-version.",
+      "source": "./plugins/openspec",
+      "version": "1.3.3",
+      "author": {
+        "name": "Eric Schoffstall",
+        "url": "https://contra.io"
+      },
+      "keywords": [
+        "openspec",
+        "spec",
+        "planning",
+        "proposal",
+        "change",
+        "specs"
+      ]
+    },
+    {
+      "name": "refine",
+      "description": "Improve quality of existing code and docs \u2014 full cleanup audits with parallel fixes, stale doc/comment sweeps, and quality reviews of changed code.",
+      "source": "./plugins/refine",
+      "version": "2.10.0",
+      "author": {
+        "name": "Eric Schoffstall",
+        "url": "https://contra.io"
+      },
+      "keywords": [
+        "refine",
+        "cleanup",
+        "simplify",
+        "comments",
+        "docs",
+        "stale",
+        "docstrings",
+        "todo",
+        "refactoring",
+        "quality",
+        "architecture",
+        "terminology"
+      ]
+    },
+    {
+      "name": "security-pentest",
+      "description": "Authorized black-box penetration testing of live targets \u2014 hunters probe endpoints, skeptics re-test every finding, referees give the verdict. The live-target complement to audit:security's source review.",
+      "source": "./plugins/security-pentest",
+      "version": "1.0.0",
+      "author": {
+        "name": "Eric Schoffstall",
+        "url": "https://contra.io"
+      },
+      "keywords": [
+        "security",
+        "pentesting",
+        "penetration-testing",
+        "black-box",
+        "vulnerabilities",
+        "adversarial",
+        "bug-bounty"
+      ]
+    },
+    {
+      "name": "security-reverse",
+      "description": "REA-first vulnerability research on compiled artifacts: decompile and trace native binaries, firmware, Android, .NET, Java, Electron, iOS, and WASM with the REA MCP server (manual Ghidra/jadx/ilspycmd toolchain as fallback), then audit the recovered code for exploitable bugs.",
+      "source": "./plugins/security-reverse",
+      "version": "1.1.0",
+      "author": {
+        "name": "Eric Schoffstall",
+        "url": "https://contra.io"
+      },
+      "keywords": [
+        "security",
+        "reverse-engineering",
+        "decompilation",
+        "ghidra",
+        "binary",
+        "firmware",
+        "android",
+        "dotnet",
+        "rea",
+        "mcp",
+        "vulnerability-research"
+      ]
+    },
+    {
+      "name": "skill-improver",
+      "description": "Review and fix Claude Code skills and plugins \u2014 frontmatter, routing descriptions, cost budgets, unreachable references, approval gates, and prompt anti-patterns.",
+      "source": "./plugins/skill-improver",
+      "version": "1.0.0",
+      "author": {
+        "name": "Eric Schoffstall",
+        "url": "https://contra.io"
+      },
+      "keywords": [
+        "skills",
+        "plugins",
+        "review",
+        "prompt-quality",
+        "meta"
+      ]
+    },
+    {
+      "name": "sre",
+      "description": "Site reliability engineering across PagerDuty, Sentry, and Splunk. Use for on-call, PIR/RCA authoring, querying logs and errors, or authoring runbooks.",
+      "source": "./plugins/sre",
+      "version": "1.6.0",
+      "author": {
+        "name": "Eric Schoffstall",
+        "url": "https://contra.io"
+      },
+      "keywords": [
+        "sre",
+        "incident",
+        "outage",
+        "on-call",
+        "pagerduty",
+        "reliability",
+        "sentry",
+        "errors",
+        "splunk",
+        "logs",
+        "observability",
+        "runbook",
+        "pir",
+        "rca"
+      ]
+    },
+    {
+      "name": "startup-namer",
+      "description": "Brainstorms startup, company, and product names and checks each one: domain availability over RDAP, WHOIS for purchasable domains, USPTO trademark conflicts by Nice class, SEO competition, and domain hacks.",
+      "source": "./plugins/startup-namer",
+      "version": "1.0.0",
+      "author": {
+        "name": "Eric Schoffstall",
+        "url": "https://contra.io"
+      },
+      "keywords": [
+        "startup",
+        "naming",
+        "domains",
+        "trademark",
+        "seo",
+        "branding"
+      ]
+    },
+    {
+      "name": "status",
+      "description": "Generate status updates from git history and PRs \u2014 daily standups and weekly management reports. Auto-detects repo and authors from git.",
+      "source": "./plugins/status",
+      "version": "1.5.3",
+      "author": {
+        "name": "Eric Schoffstall",
+        "url": "https://contra.io"
+      },
+      "keywords": [
+        "status",
+        "standup",
+        "weekly",
+        "report",
+        "commits",
+        "pull-requests",
+        "slack",
+        "management"
+      ]
+    },
+    {
+      "name": "workflow",
+      "description": "Ship work end to end. go-time: an approved plan or task list through parallel implementers, review, E2E matrix, PR, CI, auto-merge, and cleanup. bug-bash: mass-triage a GitHub Issues backlog, post replies, labels and closes, and swarm go-time fixers, one PR per bug. /broadcast: send a non-disruptive FYI to the other Claude sessions on this machine, grouped by repo.",
+      "source": "./plugins/workflow",
+      "version": "2.3.4",
+      "author": {
+        "name": "Eric Schoffstall",
+        "url": "https://contra.io"
+      },
+      "keywords": [
+        "workflow",
+        "feature",
+        "orchestration",
+        "plan",
+        "exec",
+        "review",
+        "pr",
+        "merge",
+        "audit",
+        "bug-bash",
+        "triage",
+        "github-issues",
+        "broadcast",
+        "sessions"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "startup-namer",
+  "description": "Brainstorms startup, company, and product names and checks each one: domain availability over RDAP, WHOIS for purchasable domains, USPTO trademark conflicts by Nice class, SEO competition, and domain hacks.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Eric Schoffstall",
+    "url": "https://contra.io"
+  },
+  "keywords": [
+    "startup",
+    "naming",
+    "domains",
+    "trademark",
+    "seo",
+    "branding"
+  ],
+  "skills": [
+    "./skills/startup-namer"
+  ],
+  "homepage": "https://github.com/yocontra/skills/tree/main/plugins/startup-namer",
+  "repository": "https://github.com/yocontra/skills",
+  "license": "MIT"
+}

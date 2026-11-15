@@ -1,0 +1,25 @@
+{
+  "name": "android-acceleration",
+  "description": "Hardware-accelerated on-device AI inference for Android: ExecuTorch with XNNPACK, Qualcomm QNN, MediaTek NeuroPilot and Samsung Exynos, LiteRT and LiteRT-LM, ONNX Runtime Mobile, ML Kit GenAI (Gemini Nano), JNI bridges, fallback and profiling.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Eric Schoffstall",
+    "url": "https://contra.io"
+  },
+  "keywords": [
+    "android",
+    "inference",
+    "npu",
+    "executorch",
+    "qualcomm",
+    "mediatek",
+    "litert",
+    "quantization"
+  ],
+  "skills": [
+    "./skills/android-acceleration"
+  ],
+  "homepage": "https://github.com/yocontra/skills/tree/main/plugins/android-acceleration",
+  "repository": "https://github.com/yocontra/skills",
+  "license": "MIT"
+}

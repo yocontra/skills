@@ -1,0 +1,29 @@
+{
+  "name": "asset-gen",
+  "description": "Generate images, sound effects, music, video, SVG icons, and 3D models through Google Gemini, ElevenLabs, and Meshy AI, with post-processing for padding, transparency, and vector tracing.",
+  "version": "2.0.0",
+  "author": {
+    "name": "Eric Schoffstall",
+    "url": "https://contra.io"
+  },
+  "keywords": [
+    "assets",
+    "images",
+    "audio",
+    "video",
+    "svg",
+    "3d",
+    "generation"
+  ],
+  "skills": [
+    "./skills/image",
+    "./skills/svg",
+    "./skills/sound",
+    "./skills/music",
+    "./skills/video",
+    "./skills/3d-model"
+  ],
+  "homepage": "https://github.com/yocontra/skills/tree/main/plugins/asset-gen",
+  "repository": "https://github.com/yocontra/skills",
+  "license": "MIT"
+}

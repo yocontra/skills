@@ -1,0 +1,32 @@
+{
+  "name": "audit",
+  "description": "Adversarial code auditing with parallel hunter/skeptic/referee trios, plus exhaustive item-by-item sweeps with a coverage proof. Use when auditing a codebase for correctness bugs, performance bottlenecks, or security vulnerabilities, or when every item in a set must be checked.",
+  "version": "1.6.4",
+  "author": {
+    "name": "Eric Schoffstall",
+    "url": "https://contra.io"
+  },
+  "keywords": [
+    "audit",
+    "bugs",
+    "performance",
+    "security",
+    "vulnerabilities",
+    "adversarial",
+    "code-review",
+    "race-conditions",
+    "exploits",
+    "exhaustive",
+    "coverage",
+    "systematic"
+  ],
+  "skills": [
+    "./skills/bugs",
+    "./skills/performance",
+    "./skills/security",
+    "./skills/exhaustive"
+  ],
+  "homepage": "https://github.com/yocontra/skills/tree/main/plugins/audit",
+  "repository": "https://github.com/yocontra/skills",
+  "license": "MIT"
+}

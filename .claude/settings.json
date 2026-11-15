@@ -1,0 +1,25 @@
+{
+  "enabledPlugins": {
+    "agent-cost-report@skills": true,
+    "agent-ready@skills": true,
+    "android-acceleration@skills": true,
+    "asset-gen@skills": true,
+    "audit@skills": true,
+    "coreml-optimization@skills": true,
+    "gh@skills": true,
+    "graphite@skills": true,
+    "humanizer@skills": true,
+    "ios-debugging@skills": true,
+    "manager@skills": true,
+    "model-quantization@skills": true,
+    "openspec@skills": true,
+    "refine@skills": true,
+    "security-pentest@skills": true,
+    "security-reverse@skills": true,
+    "skill-improver@skills": true,
+    "sre@skills": true,
+    "startup-namer@skills": true,
+    "status@skills": true,
+    "workflow@skills": true
+  }
+}

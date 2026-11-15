@@ -1,0 +1,22 @@
+{
+  "name": "skill-improver",
+  "description": "Review and fix Claude Code skills and plugins \u2014 frontmatter, routing descriptions, cost budgets, unreachable references, approval gates, and prompt anti-patterns.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Eric Schoffstall",
+    "url": "https://contra.io"
+  },
+  "keywords": [
+    "skills",
+    "plugins",
+    "review",
+    "prompt-quality",
+    "meta"
+  ],
+  "skills": [
+    "./skills/skill-improver"
+  ],
+  "homepage": "https://github.com/yocontra/skills/tree/main/plugins/skill-improver",
+  "repository": "https://github.com/yocontra/skills",
+  "license": "MIT"
+}

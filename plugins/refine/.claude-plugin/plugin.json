@@ -1,0 +1,32 @@
+{
+  "name": "refine",
+  "description": "Improve quality of existing code and docs — full cleanup audits with parallel fixes, stale doc/comment sweeps, and quality reviews of changed code.",
+  "version": "2.10.0",
+  "author": {
+    "name": "Eric Schoffstall",
+    "url": "https://contra.io"
+  },
+  "keywords": [
+    "refine",
+    "cleanup",
+    "simplify",
+    "comments",
+    "docs",
+    "stale",
+    "docstrings",
+    "todo",
+    "refactoring",
+    "quality",
+    "architecture",
+    "terminology",
+    "preferred-name"
+  ],
+  "skills": [
+    "./skills/code-cleanup",
+    "./skills/freshen-docs",
+    "./skills/simplify"
+  ],
+  "homepage": "https://github.com/yocontra/skills/tree/main/plugins/refine",
+  "repository": "https://github.com/yocontra/skills",
+  "license": "MIT"
+}

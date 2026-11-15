@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash|Read|Edit|Write|MultiEdit|NotebookEdit|Glob|Grep|LSP|mcp__.*__ctx_(execute|execute_file|batch_execute)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/bin/bash \"${CLAUDE_PLUGIN_ROOT}/scripts/seed-hook.sh\"",
+            "timeout": 300
+          }
+        ]
+      }
+    ]
+  }
+}

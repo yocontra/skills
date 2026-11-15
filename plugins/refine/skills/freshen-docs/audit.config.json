@@ -1,0 +1,12 @@
+{
+  "domainLabel": "documentation",
+  "idPrefix": "DOC",
+  "verdictEnum": ["STALE", "NOT_STALE", "CONDITIONAL"],
+  "confirmVerdicts": ["STALE", "CONDITIONAL"],
+  "conditionalVerdict": "CONDITIONAL",
+  "autoSafeField": true,
+  "applyFixes": true,
+  "findingFields": [],
+  "partition": { "maxZones": 6 },
+  "forever": { "enabled": false }
+}

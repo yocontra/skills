@@ -1,0 +1,23 @@
+{
+  "name": "graphite",
+  "description": "Stacked PR workflow through the Graphite CLI (gt) \u2014 create, submit, update, restack, sync, and merge stacks, and work review feedback across them.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Eric Schoffstall",
+    "url": "https://contra.io"
+  },
+  "keywords": [
+    "graphite",
+    "gt",
+    "stacked-prs",
+    "git",
+    "pull-requests",
+    "code-review"
+  ],
+  "skills": [
+    "./skills/graphite"
+  ],
+  "homepage": "https://github.com/yocontra/skills/tree/main/plugins/graphite",
+  "repository": "https://github.com/yocontra/skills",
+  "license": "MIT"
+}

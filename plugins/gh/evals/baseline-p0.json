@@ -1,0 +1,50 @@
+{
+  "note": "P0 baseline for the repo-wide hillclimb. Compact by design: per-case scores only, no transcripts. Compare a later run against this with the same --runs and --ablation settings or the numbers are not comparable.",
+  "claudeVersion": "2.1.270",
+  "startedAt": "2026-09-14T19:53:34.907Z",
+  "runsPerCase": 3,
+  "ablation": "with-without",
+  "costUsd": 1.9268,
+  "cases": {
+    "gh-auth-host": {
+      "with": 1,
+      "without": 0.5,
+      "delta": 0.5
+    },
+    "monitor-pr-routing": {
+      "with": 1,
+      "without": 0.5,
+      "delta": 0.5
+    },
+    "negative-plain-git-question": {
+      "with": 1,
+      "without": 1,
+      "delta": 0
+    },
+    "open-pr-routing": {
+      "with": 1,
+      "without": 0.5,
+      "delta": 0.5
+    },
+    "push-routing": {
+      "with": 0.5,
+      "without": 0.5,
+      "delta": 0
+    },
+    "rebase-routing": {
+      "with": 1,
+      "without": 0,
+      "delta": 1
+    },
+    "review-routing": {
+      "with": 1,
+      "without": 0,
+      "delta": 1
+    },
+    "worktree-routing": {
+      "with": 1,
+      "without": 0.5,
+      "delta": 0.5
+    }
+  }
+}

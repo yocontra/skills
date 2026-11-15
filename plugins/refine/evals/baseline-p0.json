@@ -1,0 +1,35 @@
+{
+  "note": "P0 baseline for the repo-wide hillclimb. Compact by design: per-case scores only, no transcripts. Compare a later run against this with the same --runs and --ablation settings or the numbers are not comparable.",
+  "claudeVersion": "2.1.270",
+  "startedAt": "2026-09-14T20:22:11.490Z",
+  "runsPerCase": 3,
+  "ablation": "with-without",
+  "costUsd": 1.5151,
+  "cases": {
+    "code-cleanup-routing": {
+      "with": 1,
+      "without": 0,
+      "delta": 1
+    },
+    "freshen-docs-routing": {
+      "with": 1,
+      "without": 1,
+      "delta": 0
+    },
+    "knowledge-load-bearing-branch": {
+      "with": 1,
+      "without": 1,
+      "delta": 0
+    },
+    "negative-ruff-defaults": {
+      "with": 1,
+      "without": 1,
+      "delta": 0
+    },
+    "simplify-routing": {
+      "with": 1,
+      "without": 0.5,
+      "delta": 0.5
+    }
+  }
+}

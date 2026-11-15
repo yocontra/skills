@@ -1,0 +1,84 @@
+# Configuration file for `prek`, a git hook framework written in Rust.
+# See https://prek.j178.dev for more information.
+
+[[repos]]
+repo = "builtin"
+hooks = [
+    { id = "trailing-whitespace" },
+    { id = "end-of-file-fixer" },
+    { id = "check-yaml" },
+    { id = "check-added-large-files", args = ["--maxkb=1000"] },
+    { id = "check-merge-conflict" },
+    { id = "detect-private-key" },
+]
+
+[[repos]]
+repo = "local"
+hooks = [
+    # Vale prose linting over docs + source comments. Lints the whole authored
+    # corpus (excludes are path-based in the script), so filenames aren't passed.
+    {
+        id = "vale",
+        name = "vale prose lint",
+        entry = "scripts/vale-lint.sh",
+        language = "system",
+        pass_filenames = false,
+        files = '\.(md|py|js|mjs)$',
+    },
+    # Every plugin ships an eval suite, every case is well-formed, and every
+    # skill has a case asserting it fires. Static only — no model calls.
+    {
+        id = "check-evals",
+        name = "plugin eval suites",
+        entry = "node scripts/check-evals.mjs",
+        language = "system",
+        pass_filenames = false,
+        files = '^(plugins/|scripts/check-evals\.mjs|scripts/evals-exempt\.txt)',
+    },
+    # Token budgets for skills: description size, body size, reference wiring,
+    # and a model/cost knob on high fan-out. Static only — no model calls.
+    {
+        id = "check-cost",
+        name = "skill cost budgets",
+        entry = "node scripts/check-cost.mjs",
+        language = "system",
+        pass_filenames = false,
+        files = '^(plugins/|\.claude/skills/|scripts/check-cost\.mjs|scripts/cost-baseline\.txt)',
+    },
+    # Workflow scripts embed copies of their prompts/*.md; the copies must match.
+    {
+        id = "workflow-prompts",
+        name = "workflow prompt copies",
+        entry = "node scripts/sync-workflow-prompts.mjs --check",
+        language = "system",
+        pass_filenames = false,
+        files = '^(plugins/[^/]+/workflows/|scripts/sync-workflow-prompts\.mjs)',
+    },
+    # Behavior tests for workflow scripts (plugins/*/workflows/*/__tests__).
+    {
+        id = "workflow-tests",
+        name = "workflow script tests",
+        entry = "sh -c 'node --test plugins/*/workflows/*/__tests__/*.test.mjs'",
+        language = "system",
+        pass_filenames = false,
+        files = '^plugins/[^/]+/workflows/',
+    },
+    # Behavior tests for plugin hook scripts (plugins/*/hooks/__tests__).
+    {
+        id = "hook-tests",
+        name = "plugin hook tests",
+        entry = "sh -c 'node --test plugins/*/hooks/__tests__/*.test.mjs'",
+        language = "system",
+        pass_filenames = false,
+        files = '^plugins/[^/]+/(hooks/|openspec-version$)',
+    },
+    # Behavior tests for plugin- and skill-level helper scripts (test_*.py).
+    {
+        id = "plugin-script-tests",
+        name = "plugin script tests",
+        entry = "sh -c 'for t in plugins/*/scripts/test_*.py plugins/*/skills/*/scripts/test_*.py; do python3 \"$t\" || exit 1; done'",
+        language = "system",
+        pass_filenames = false,
+        files = '^plugins/[^/]+/(skills/[^/]+/)?scripts/',
+    },
+]

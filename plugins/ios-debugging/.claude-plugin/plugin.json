@@ -1,0 +1,25 @@
+{
+  "name": "ios-debugging",
+  "description": "iOS simulator control for Expo, React Native and Swift apps: boot, install, launch, deep-link navigation, accessibility-tree inspection, log streaming, location, push and status-bar overrides.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Eric Schoffstall",
+    "url": "https://contra.io"
+  },
+  "keywords": [
+    "ios",
+    "simulator",
+    "xcrun",
+    "simctl",
+    "idb",
+    "react-native",
+    "expo",
+    "swift"
+  ],
+  "skills": [
+    "./skills/ios-debugging"
+  ],
+  "homepage": "https://github.com/yocontra/skills/tree/main/plugins/ios-debugging",
+  "repository": "https://github.com/yocontra/skills",
+  "license": "MIT"
+}

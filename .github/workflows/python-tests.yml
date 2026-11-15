@@ -1,0 +1,25 @@
+name: python-tests
+
+on:
+  pull_request:
+    paths:
+      - "plugins/**/*.py"
+      - ".github/workflows/python-tests.yml"
+  push:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - name: Run every test_*.py suite under plugins/
+        run: |
+          status=0
+          while IFS= read -r t; do
+            echo "::group::$t"
+            (cd "$(dirname "$t")" && uv run python "$(basename "$t")") || status=1
+            echo "::endgroup::"
+          done < <(find plugins -name 'test_*.py' -not -path '*/node_modules/*' | sort)
+          exit "$status"

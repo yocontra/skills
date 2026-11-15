@@ -1,0 +1,6 @@
+[project]
+name = "skills"
+version = "1.0.0"
+description = "Claude Code plugin marketplace"
+requires-python = ">=3.12"
+dependencies = []

@@ -1,0 +1,19 @@
+# Plugins excluded from the "every plugin has an eval suite" rule.
+#
+# check-evals.mjs fails if a plugin listed here DOES have a suite, so this file
+# cannot go stale in the permissive direction.
+
+# --- Upstream-owned: permanent ---------------------------------------------
+# Plugins whose skills are copied in from an upstream package and not authored
+# here. A skill fix driven by an eval would be destroyed by the next sync, and
+# the eval would be testing code this repo does not own. Fix the upstream
+# project instead.
+#
+# (none)
+
+# --- Pending: shrinking ----------------------------------------------------
+# Plugins that predate the rule and still owe a suite. Delete the line when you
+# add plugins/<name>/evals/. New plugins must NOT be added here — they ship with
+# evals or they do not merge.
+#
+# (none)

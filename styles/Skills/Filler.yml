@@ -1,0 +1,15 @@
+extends: existence
+message: "Filler word '%s' — cut it or state the specific fact."
+link: https://vale.sh/docs/topics/styles/#existence
+level: warning
+ignorecase: true
+# Pure intensifiers that are safe to cut in nearly every context. Adverbs
+# that often carry real meaning are deliberately excluded: "actually"
+# (contrastive: "does it actually run?"), "clearly"/"obviously" (can be
+# adjectival: "clearly labeled"), "usually"/"several" (quantitative).
+tokens:
+  - very
+  - really
+  - quite
+  - extremely
+  - fairly

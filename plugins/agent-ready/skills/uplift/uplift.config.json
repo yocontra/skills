@@ -1,0 +1,22 @@
+{
+  "categories": [
+    "Tooling",
+    "Auth",
+    "CI",
+    "Env",
+    "MCP",
+    "Plugin",
+    "Sibling repo",
+    "External service integrations",
+    "Service component",
+    "Dependency install",
+    "Container registry",
+    "Dev loop",
+    "Sandbox permission",
+    "Cluster correctness",
+    "Agent doc",
+    "Project skills"
+  ],
+  "default_timeout_seconds": 5,
+  "scope": {}
+}

@@ -1,0 +1,21 @@
+{
+  "name": "agent-cost-report",
+  "description": "Report Claude Code token spend for a project from local session transcripts: main vs subagent split, cache rewrites after idle gaps by cause, tool errors, hook denials, and top sessions.",
+  "version": "1.1.1",
+  "author": {
+    "name": "Eric Schoffstall",
+    "url": "https://contra.io"
+  },
+  "keywords": [
+    "cost",
+    "tokens",
+    "claude-code",
+    "cache"
+  ],
+  "skills": [
+    "./skills/agent-cost-report"
+  ],
+  "homepage": "https://github.com/yocontra/skills/tree/main/plugins/agent-cost-report",
+  "repository": "https://github.com/yocontra/skills",
+  "license": "MIT"
+}

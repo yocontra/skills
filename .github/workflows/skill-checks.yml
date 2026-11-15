@@ -1,0 +1,31 @@
+name: skill-checks
+
+on:
+  pull_request:
+    paths:
+      - "plugins/**"
+      - "shared/**"
+      - "scripts/**"
+      - ".claude-plugin/**"
+      - ".github/workflows/skill-checks.yml"
+  push:
+    branches: [main]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Cost budgets (descriptions, bodies, references, fan-out)
+        run: node scripts/check-cost.mjs
+      - name: Eval suites (structure, scorability, skill coverage)
+        run: node scripts/check-evals.mjs
+      - name: Eval quality audit
+        run: node scripts/audit-evals.mjs
+      - name: Skill lint
+        run: node plugins/skill-improver/skills/skill-improver/scripts/lint-skill.mjs plugins
+      - name: Flatten for non-Claude harnesses
+        run: python3 scripts/flatten-skills.py --out "$RUNNER_TEMP/agent-skills"

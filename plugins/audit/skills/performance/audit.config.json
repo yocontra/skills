@@ -1,0 +1,11 @@
+{
+  "domainLabel": "performance",
+  "idPrefix": "PERF",
+  "verdictEnum": ["CONFIRMED", "NOT_AN_ISSUE", "CONDITIONAL"],
+  "confirmVerdicts": ["CONFIRMED", "CONDITIONAL"],
+  "conditionalVerdict": "CONDITIONAL",
+  "confidenceField": true,
+  "findingFields": ["confidence", "scale"],
+  "partition": { "maxZones": 6 },
+  "forever": { "enabled": false }
+}

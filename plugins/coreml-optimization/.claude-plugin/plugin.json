@@ -1,0 +1,24 @@
+{
+  "name": "coreml-optimization",
+  "description": "Core ML and Apple Neural Engine optimization for iOS and macOS: coremltools conversion, ANE placement, split einsum attention, palettization and joint compression, stateful KV-cache models, MLComputePlan profiling, and Apple Foundation Models.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Eric Schoffstall",
+    "url": "https://contra.io"
+  },
+  "keywords": [
+    "coreml",
+    "apple",
+    "neural-engine",
+    "ane",
+    "ios",
+    "macos",
+    "coremltools"
+  ],
+  "skills": [
+    "./skills/coreml-optimization"
+  ],
+  "homepage": "https://github.com/yocontra/skills/tree/main/plugins/coreml-optimization",
+  "repository": "https://github.com/yocontra/skills",
+  "license": "MIT"
+}

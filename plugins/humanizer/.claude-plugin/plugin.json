@@ -1,0 +1,22 @@
+{
+  "name": "humanizer",
+  "description": "Writing guide for clearer, more natural prose. Covers 33 readability habits — inflated language, filler, hedging, repetitive structure, passive voice, intensifiers, clichés — with before/after examples.",
+  "version": "2.4.2",
+  "author": {
+    "name": "Eric Schoffstall",
+    "url": "https://contra.io"
+  },
+  "keywords": [
+    "writing",
+    "editing",
+    "style",
+    "prose",
+    "clarity"
+  ],
+  "skills": [
+    "./skills/humanizer"
+  ],
+  "homepage": "https://github.com/yocontra/skills/tree/main/plugins/humanizer",
+  "repository": "https://github.com/yocontra/skills",
+  "license": "MIT"
+}

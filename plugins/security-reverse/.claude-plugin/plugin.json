@@ -1,0 +1,28 @@
+{
+  "name": "security-reverse",
+  "description": "REA-first vulnerability research on compiled artifacts: decompile and trace native binaries, firmware, Android, .NET, Java, Electron, iOS, and WASM with the REA MCP server (manual Ghidra/jadx/ilspycmd toolchain as fallback), then audit the recovered code for exploitable bugs.",
+  "version": "1.1.0",
+  "author": {
+    "name": "Eric Schoffstall",
+    "url": "https://contra.io"
+  },
+  "keywords": [
+    "security",
+    "reverse-engineering",
+    "decompilation",
+    "ghidra",
+    "binary",
+    "firmware",
+    "android",
+    "dotnet",
+    "rea",
+    "mcp",
+    "vulnerability-research"
+  ],
+  "skills": [
+    "./skills/security-reverse"
+  ],
+  "homepage": "https://github.com/yocontra/skills/tree/main/plugins/security-reverse",
+  "repository": "https://github.com/yocontra/skills",
+  "license": "MIT"
+}

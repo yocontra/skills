@@ -1,0 +1,28 @@
+extends: substitution
+message: "Wordy: prefer '%s' over '%s'."
+link: https://vale.sh/docs/topics/styles/#substitution
+level: warning
+ignorecase: true
+action:
+  name: replace
+# Only unambiguous wordiness — phrases that are always tighter rewritten.
+# Precise technical terms (validate, minimum, implement, monitor) are
+# deliberately excluded; write-good.TooWordy flagged those as false positives.
+swap:
+  in order to: to
+  in order for: for
+  due to the fact that: because
+  in the event that: if
+  for the purpose of: for
+  with respect to: about
+  with regard to: about
+  in regard to: about
+  prior to: before
+  subsequent to: after
+  a number of: several
+  point in time: point
+  commence: start
+  ascertain: determine
+  endeavor: try
+  utilize: use
+  methodology: method

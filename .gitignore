@@ -1,0 +1,16 @@
+.DS_Store
+.claude/settings.local.json
+.claude/scheduled_tasks.lock
+__pycache__/
+*.pyc
+.venv/
+.playwright-mcp/
+
+# `claude plugin eval` writes a timestamped results dir per run
+plugins/*/evals/results/
+
+# Vale: ignore synced style packages (vale sync), keep our config + custom styles
+styles/*
+!styles/config/
+styles/config/grammars/
+!styles/Skills/

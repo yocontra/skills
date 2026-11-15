@@ -1,0 +1,26 @@
+{
+  "name": "status",
+  "description": "Daily standups and weekly management reports from git, GitHub PRs, and issues across every repo you or your team touched.",
+  "version": "1.5.3",
+  "author": {
+    "name": "Eric Schoffstall",
+    "url": "https://contra.io"
+  },
+  "keywords": [
+    "status",
+    "standup",
+    "weekly",
+    "report",
+    "commits",
+    "pull-requests",
+    "slack",
+    "management"
+  ],
+  "skills": [
+    "./skills/standup",
+    "./skills/weekly"
+  ],
+  "homepage": "https://github.com/yocontra/skills/tree/main/plugins/status",
+  "repository": "https://github.com/yocontra/skills",
+  "license": "MIT"
+}

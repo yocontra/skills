@@ -1,0 +1,27 @@
+# cost-baseline.txt — pre-existing skill cost violations, `path:RULE` per line.
+#
+# This is a shrinking baseline, not an escape hatch. `check-cost.mjs` fails if a
+# line here no longer violates, so the list can only get smaller. Never add a
+# new skill. Budgets and rationale: "Cost" in CLAUDE.md.
+#
+# Fix order, highest value first:
+#   1. REFERENCES — `references:` frontmatter is not a real SKILL.md key, so
+#      Claude Code ignores it. Every file below is shipped and never loaded.
+#      Fixing it is pure win: link them from the body and the skill gets its
+#      reference material back without growing the body.
+#   2. DESCRIPTION — billed on every session for every user, fired or not.
+#      Trim with an eval run to prove routing did not regress.
+#   3. FANOUT — the largest cost multiplier we ship. Add a model knob.
+#   4. ANTIPATTERN — cheap to fix, small win each. Rewrite, do not delete: a
+#      real warning keeps its meaning and loses the shouting.
+#   5. BODY — the largest single win per skill, but the most invasive rewrite.
+
+# --- ANTIPATTERN: all-caps emphasis and verification rituals ---
+
+# --- REFERENCES: reference files listed only in frontmatter, never linked ---
+
+# --- DESCRIPTION: over 350 chars, paid on every session ---
+
+# --- FANOUT: 4+ parallel agents with no model knob and no cost note ---
+
+# --- BODY: over 500 lines, billed in full on every invocation ---

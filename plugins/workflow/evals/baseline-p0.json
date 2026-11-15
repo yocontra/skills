@@ -1,0 +1,31 @@
+{
+  "note": "P0 baseline for the workflow plugin. Not yet measured: bug-bash was added and go-time rewritten in 2.3.0 without an eval run. Fill each case with {with, without, delta} from `scripts/run-evals.sh workflow --runs 3 --ablation with-without`, and compare later runs at the same settings.",
+  "claudeVersion": null,
+  "startedAt": null,
+  "runsPerCase": 3,
+  "ablation": "with-without",
+  "costUsd": null,
+  "cases": {
+    "approved-plan-oblique-routing": null,
+    "broadcast-routing": null,
+    "broadcast-targeted": null,
+    "bug-bash-cannot-reproduce": null,
+    "bug-bash-cleanup": null,
+    "bug-bash-fix-lifecycle": null,
+    "bug-bash-routing": null,
+    "bug-bash-swarm-width": null,
+    "bug-bash-user-error": null,
+    "go-time-cleanup": null,
+    "go-time-env-detect": null,
+    "go-time-flat-roster": null,
+    "go-time-no-plan-stops": null,
+    "go-time-openspec-archive-in-last-pr": null,
+    "go-time-user-question-queue": null,
+    "go-time-routing": null,
+    "go-time-small-issue-fix": null,
+    "negative-rev-parse-question": null,
+    "new-asks-are-queued": null,
+    "no-git-in-workers": null,
+    "progress-turn-is-not-done": null
+  }
+}

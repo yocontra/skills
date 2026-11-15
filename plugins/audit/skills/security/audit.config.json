@@ -1,0 +1,19 @@
+{
+  "domainLabel": "security",
+  "idPrefix": "VULN",
+  "idPrefixByType": { "dependency": "DEP" },
+  "verdictEnum": ["EXPLOITABLE", "NOT_EXPLOITABLE", "CONDITIONAL"],
+  "confirmVerdicts": ["EXPLOITABLE", "CONDITIONAL"],
+  "conditionalVerdict": "CONDITIONAL",
+  "confidenceField": true,
+  "cveGrounding": true,
+  "findingFields": ["type", "confidence", "cve", "package", "fixedIn", "attackVector", "proofSketch", "scale"],
+  "finderScaling": [
+    { "maxFiles": 9, "finders": 2 },
+    { "maxFiles": 50, "finders": 4 },
+    { "maxFiles": 300, "finders": 6 },
+    { "maxFiles": 1000000, "finders": 6, "mode": "two-pass" }
+  ],
+  "partition": { "maxZones": 6 },
+  "forever": { "enabled": false }
+}

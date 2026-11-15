@@ -1,0 +1,31 @@
+{
+  "name": "workflow",
+  "description": "Ship work end to end. go-time: an approved plan or task list through parallel implementers, review, E2E matrix, PR, CI, auto-merge, and cleanup. bug-bash: mass-triage a GitHub Issues backlog, post replies, labels and closes, and swarm go-time fixers, one PR per bug. /broadcast: send a non-disruptive FYI to the other Claude sessions on this machine, grouped by repo.",
+  "version": "2.3.4",
+  "author": {
+    "name": "Eric Schoffstall",
+    "url": "https://contra.io"
+  },
+  "keywords": [
+    "workflow",
+    "feature",
+    "orchestration",
+    "go-time",
+    "openspec",
+    "review",
+    "pr",
+    "merge",
+    "audit",
+    "bug-bash",
+    "triage",
+    "github-issues",
+    "broadcast"
+  ],
+  "skills": [
+    "./skills/go-time",
+    "./skills/bug-bash"
+  ],
+  "homepage": "https://github.com/yocontra/skills/tree/main/plugins/workflow",
+  "repository": "https://github.com/yocontra/skills",
+  "license": "MIT"
+}

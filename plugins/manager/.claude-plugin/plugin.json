@@ -1,0 +1,42 @@
+{
+  "name": "manager",
+  "description": "Tools for engineering managers — 1:1 prep across all directions (report, manager, skip-level, exec), team health snapshots, retros, annual rollups, new-hire onboarding plans, and your own performance self-review.",
+  "version": "0.9.4",
+  "author": {
+    "name": "Eric Schoffstall",
+    "url": "https://contra.io"
+  },
+  "keywords": [
+    "manager",
+    "1:1",
+    "1on1",
+    "one-on-one",
+    "prep-1on1",
+    "team-pulse",
+    "skip-level",
+    "skip-level-prep",
+    "retro",
+    "retrospective",
+    "yearly-rollup",
+    "annual-rollup",
+    "onboard-plan",
+    "30-60-90",
+    "draft",
+    "self-review",
+    "self review",
+    "performance-review",
+    "perf-review",
+    "annual-review"
+  ],
+  "skills": [
+    "./skills/prep-1on1",
+    "./skills/team-pulse",
+    "./skills/retro",
+    "./skills/yearly-rollup",
+    "./skills/onboard-plan",
+    "./skills/self-review"
+  ],
+  "homepage": "https://github.com/yocontra/skills/tree/main/plugins/manager",
+  "repository": "https://github.com/yocontra/skills",
+  "license": "MIT"
+}

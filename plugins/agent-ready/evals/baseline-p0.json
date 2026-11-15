@@ -1,0 +1,20 @@
+{
+  "note": "P0 baseline for the repo-wide hillclimb. Compact by design: per-case scores only, no transcripts. Compare a later run against this with the same --runs and --ablation settings or the numbers are not comparable. Measured when the plugin was `onboarding` and the case was `doctor-routing` (read-only skill); re-measure before comparing against agent-ready:uplift.",
+  "claudeVersion": "2.1.270",
+  "startedAt": "2026-09-14T20:25:44.364Z",
+  "runsPerCase": 3,
+  "ablation": "with-without",
+  "costUsd": 1.1946,
+  "cases": {
+    "uplift-routing": {
+      "with": 1,
+      "without": 1,
+      "delta": 0
+    },
+    "negative-python-envs": {
+      "with": 1,
+      "without": 1,
+      "delta": 0
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "note": "P0 baseline for the repo-wide hillclimb. Compact by design: per-case scores only, no transcripts. Compare a later run against this with the same --runs and --ablation settings or the numbers are not comparable.",
+  "claudeVersion": "2.1.270",
+  "startedAt": "2026-09-14T20:06:50.080Z",
+  "runsPerCase": 3,
+  "ablation": "with-without",
+  "costUsd": 2.1935,
+  "cases": {
+    "negative-deploy-freeze-note": {
+      "with": 1,
+      "without": 1,
+      "delta": 0
+    },
+    "no-perf-evaluation-of-others": {
+      "with": 1,
+      "without": 0,
+      "delta": 1
+    },
+    "onboard-plan-routing": {
+      "with": 1,
+      "without": 0,
+      "delta": 1
+    },
+    "prep-1on1-routing": {
+      "with": 1,
+      "without": 0,
+      "delta": 1
+    },
+    "retro-routing": {
+      "with": 1,
+      "without": 1,
+      "delta": 0
+    },
+    "self-review-is-allowed": {
+      "with": 1,
+      "without": 0,
+      "delta": 1
+    },
+    "self-review-routing": {
+      "with": 1,
+      "without": 1,
+      "delta": 0
+    },
+    "team-pulse-routing": {
+      "with": 1,
+      "without": 0,
+      "delta": 1
+    },
+    "yearly-rollup-routing": {
+      "with": 0,
+      "without": 0,
+      "delta": 0
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "model-quantization",
+  "description": "Cross-platform model quantization and format conversion: AWQ, GPTQ, GGUF/llama.cpp, ONNX Runtime, ExecuTorch and LiteRT, plus mobile model selection, memory estimation, and quality validation.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Eric Schoffstall",
+    "url": "https://contra.io"
+  },
+  "keywords": [
+    "quantization",
+    "gguf",
+    "awq",
+    "gptq",
+    "onnx",
+    "executorch",
+    "mobile"
+  ],
+  "skills": [
+    "./skills/model-quantization"
+  ],
+  "homepage": "https://github.com/yocontra/skills/tree/main/plugins/model-quantization",
+  "repository": "https://github.com/yocontra/skills",
+  "license": "MIT"
+}

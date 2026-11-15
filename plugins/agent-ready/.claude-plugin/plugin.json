@@ -1,0 +1,26 @@
+{
+  "name": "agent-ready",
+  "description": "Make any repo agent-ready. `uplift` audits CLIs, auth, MCP servers, env vars, settings.json permissions, CI and CLAUDE.md on macOS or Linux, reports readiness, then applies CLAUDE.md/AGENTS.md, scoped permissions, hooks, MCP config, runnable dev-loop commands, setup docs and .gitignore entries.",
+  "version": "0.5.3",
+  "author": {
+    "name": "Eric Schoffstall",
+    "url": "https://contra.io"
+  },
+  "keywords": [
+    "agent-ready",
+    "uplift",
+    "onboarding",
+    "preflight",
+    "agent-readiness",
+    "claude-md",
+    "agents-md",
+    "permissions",
+    "hooks"
+  ],
+  "skills": [
+    "./skills/uplift"
+  ],
+  "homepage": "https://github.com/yocontra/skills/tree/main/plugins/agent-ready",
+  "repository": "https://github.com/yocontra/skills",
+  "license": "MIT"
+}

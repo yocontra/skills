@@ -1,0 +1,35 @@
+name: vale
+
+on:
+  pull_request:
+    paths:
+      - "plugins/**/*.md"
+      - "plugins/**/*.py"
+      - "plugins/**/*.js"
+      - "plugins/**/*.mjs"
+      - "scripts/**"
+      - "shared/**"
+      - "README.md"
+      - ".vale.ini"
+      - "styles/**"
+      - ".github/workflows/vale.yml"
+  push:
+    branches: [main]
+
+jobs:
+  prose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Vale
+        env:
+          VALE_VERSION: "3.27.0"
+        run: |
+          mkdir -p "$HOME/.local/bin"
+          curl -fsSL "https://github.com/errata-ai/vale/releases/download/v${VALE_VERSION}/vale_${VALE_VERSION}_Linux_64-bit.tar.gz" \
+            | tar -xz -C "$HOME/.local/bin" vale
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+      - name: Sync Vale packages
+        run: vale sync
+      - name: Lint prose + comments
+        run: scripts/vale-lint.sh

@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "[ \"$(cat \"${CLAUDE_CONFIG_DIR:-$HOME/.claude}/.refine-mode\" 2>/dev/null)\" = auto ] || exit 0; node \"${CLAUDE_PLUGIN_ROOT}/hooks/refine-watch.js\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}

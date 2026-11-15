@@ -1,0 +1,28 @@
+{
+  "name": "openspec",
+  "description": "OpenSpec spec-driven planning workflow (propose, explore, apply, update, sync, archive) as skills and /openspec: commands, plus /openspec:setup to adopt it in a repo and migrate existing plans. Wraps the OpenSpec CLI; needs `openspec` on PATH at the version in openspec-version.",
+  "version": "1.3.3",
+  "author": {
+    "name": "Eric Schoffstall",
+    "url": "https://contra.io"
+  },
+  "keywords": [
+    "openspec",
+    "spec",
+    "planning",
+    "proposal",
+    "change",
+    "specs"
+  ],
+  "skills": [
+    "./skills/openspec-propose",
+    "./skills/openspec-explore",
+    "./skills/openspec-apply-change",
+    "./skills/openspec-update-change",
+    "./skills/openspec-sync-specs",
+    "./skills/openspec-archive-change"
+  ],
+  "homepage": "https://github.com/yocontra/skills/tree/main/plugins/openspec",
+  "repository": "https://github.com/yocontra/skills",
+  "license": "MIT"
+}

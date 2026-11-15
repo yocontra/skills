@@ -1,0 +1,23 @@
+name: workflows-check
+
+on:
+  pull_request:
+    paths:
+      - "shared/workflows/**"
+      - "plugins/**/skills/**/*.js"
+      - "plugins/**/.claude-plugin/plugin.json"
+      - ".claude-plugin/marketplace.json"
+      - "scripts/check-workflows.mjs"
+  push:
+    branches: [main]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Validate bundled workflow scripts + version parity
+        run: node scripts/check-workflows.mjs

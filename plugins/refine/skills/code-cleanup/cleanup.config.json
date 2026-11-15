@@ -1,0 +1,17 @@
+{
+  "forever": { "enabled": false },
+  "axes": [
+    "bugs",
+    "perf",
+    "security",
+    "architecture",
+    "abstractions",
+    "error-handling",
+    "api-surface",
+    "concurrency",
+    "dependencies",
+    "testing",
+    "configuration",
+    "docs"
+  ]
+}

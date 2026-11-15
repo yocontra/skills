@@ -1,0 +1,595 @@
+{
+  "plugins": {
+    "agent-cost-report": {
+      "cases": 4,
+      "graders": 8,
+      "byType": {
+        "llm": 4,
+        "tool_used": 3,
+        "regex": 1
+      },
+      "descriptionBytes": 277,
+      "skills": {
+        "agent-cost-report": {
+          "assertedFiring": 4,
+          "descriptionBytes": 277
+        }
+      },
+      "patterns": {
+        "custom-config-dir-finds-project/uses-list.md": 6
+      }
+    },
+    "agent-ready": {
+      "cases": 8,
+      "graders": 18,
+      "byType": {
+        "llm": 11,
+        "tool_used": 7
+      },
+      "descriptionBytes": 317,
+      "skills": {
+        "uplift": {
+          "assertedFiring": 12,
+          "descriptionBytes": 317
+        }
+      },
+      "patterns": {}
+    },
+    "android-acceleration": {
+      "cases": 4,
+      "graders": 8,
+      "byType": {
+        "regex": 2,
+        "llm": 4,
+        "tool_used": 2
+      },
+      "descriptionBytes": 346,
+      "skills": {
+        "android-acceleration": {
+          "assertedFiring": 2,
+          "descriptionBytes": 346
+        }
+      },
+      "patterns": {
+        "mediatek-needs-linux/mentions-linux.md": 5,
+        "qnn-export-routing/names-sm8650.md": 6
+      }
+    },
+    "asset-gen": {
+      "cases": 10,
+      "graders": 29,
+      "byType": {
+        "llm": 10,
+        "regex": 8,
+        "tool_used": 11
+      },
+      "descriptionBytes": 1283,
+      "skills": {
+        "3d-model": {
+          "assertedFiring": 2,
+          "descriptionBytes": 225
+        },
+        "image": {
+          "assertedFiring": 4,
+          "descriptionBytes": 238
+        },
+        "music": {
+          "assertedFiring": 2,
+          "descriptionBytes": 169
+        },
+        "sound": {
+          "assertedFiring": 2,
+          "descriptionBytes": 180
+        },
+        "svg": {
+          "assertedFiring": 4,
+          "descriptionBytes": 269
+        },
+        "video": {
+          "assertedFiring": 2,
+          "descriptionBytes": 202
+        }
+      },
+      "patterns": {
+        "3d-model-routing/names-meshy.md": 5,
+        "api-key-from-env/names-env-var.md": 14,
+        "exclusion-vector-logo-not-image/names-potrace.md": 7,
+        "meshy-pipeline-knowledge/mentions-remesh.md": 6,
+        "music-routing/names-instrumental.md": 33,
+        "svg-icon-cleanup/names-rm.md": 6,
+        "transparent-sprite-routing/names-green-screen.md": 37,
+        "video-routing/names-vertical-aspect.md": 4
+      }
+    },
+    "audit": {
+      "cases": 29,
+      "graders": 63,
+      "byType": {
+        "regex": 12,
+        "tool_used": 25,
+        "llm": 26
+      },
+      "descriptionBytes": 954,
+      "skills": {
+        "bugs": {
+          "assertedFiring": 14,
+          "descriptionBytes": 241
+        },
+        "exhaustive": {
+          "assertedFiring": 10,
+          "descriptionBytes": 204
+        },
+        "performance": {
+          "assertedFiring": 6,
+          "descriptionBytes": 177
+        },
+        "security": {
+          "assertedFiring": 10,
+          "descriptionBytes": 332
+        }
+      },
+      "patterns": {
+        "bugs-oblique-routing/adversarial-trio.md": 10,
+        "cve-scan-offline/names-osv-scanner.md": 11,
+        "exclusion-date-edge-cases-not-security/adversarial-trio.md": 10,
+        "exclusion-memory-sweep-not-bugs/adversarial-trio.md": 10,
+        "exclusion-tenant-isolation-not-bugs/names-osv-scanner.md": 11,
+        "exhaustive-oblique-compliance-sweep-routing/partitions-the-space.md": 12,
+        "exhaustive-small-universe-inline/runs-inline.md": 71,
+        "exhaustive-small-universe-inline/states-full-coverage.md": 46,
+        "performance-oblique-routing/adversarial-trio.md": 10,
+        "performance-routing/adversarial-trio.md": 10,
+        "security-oblique-routing/names-osv-scanner.md": 11,
+        "security-oblique-routing/names-referee-role.md": 10
+      }
+    },
+    "coreml-optimization": {
+      "cases": 5,
+      "graders": 9,
+      "byType": {
+        "regex": 2,
+        "llm": 5,
+        "tool_used": 2
+      },
+      "descriptionBytes": 328,
+      "skills": {
+        "coreml-optimization": {
+          "assertedFiring": 2,
+          "descriptionBytes": 328
+        }
+      },
+      "patterns": {
+        "compression-needs-ios18/names-ios18.md": 8,
+        "gguf-is-not-coreml/names-gguf-quantize.md": 21
+      }
+    },
+    "gh": {
+      "cases": 46,
+      "graders": 110,
+      "byType": {
+        "llm": 55,
+        "tool_used": 43,
+        "regex": 12
+      },
+      "descriptionBytes": 2090,
+      "skills": {
+        "gh": {
+          "assertedFiring": 4,
+          "descriptionBytes": 289
+        },
+        "monitor-pr": {
+          "assertedFiring": 20,
+          "descriptionBytes": 340
+        },
+        "open-pr": {
+          "assertedFiring": 12,
+          "descriptionBytes": 235
+        },
+        "push": {
+          "assertedFiring": 10,
+          "descriptionBytes": 340
+        },
+        "rebase": {
+          "assertedFiring": 4,
+          "descriptionBytes": 254
+        },
+        "review": {
+          "assertedFiring": 18,
+          "descriptionBytes": 349
+        },
+        "worktree": {
+          "assertedFiring": 8,
+          "descriptionBytes": 283
+        }
+      },
+      "patterns": {
+        "gh-auth-host/checks-status-first.md": 14,
+        "gh-auth-host/enterprise-host.md": 48,
+        "gh-checks-json-link/json-no-detailsurl.md": 29,
+        "gh-checks-json-link/json-uses-link.md": 23,
+        "gh-resolve-thread/uses-graphql-mutation.md": 19,
+        "monitor-pr-injected-review-comment/wraps-in-datasource.md": 19,
+        "open-pr-oblique/uses-body-file.md": 11,
+        "pr-body-file/uses-body-file.md": 11,
+        "rebase-oblique/force-with-lease.md": 18,
+        "worktree-cleanup/non-forcing-remove.md": 71,
+        "worktree-disk-seed/uses-seeding-helper.md": 14,
+        "worktree-routing/uses-worktree-add.md": 31
+      }
+    },
+    "graphite": {
+      "cases": 6,
+      "graders": 12,
+      "byType": {
+        "llm": 7,
+        "regex": 1,
+        "tool_used": 4
+      },
+      "descriptionBytes": 287,
+      "skills": {
+        "graphite": {
+          "assertedFiring": 6,
+          "descriptionBytes": 287
+        }
+      },
+      "patterns": {
+        "graphite-detect-without-init/names-config-file.md": 20
+      }
+    },
+    "humanizer": {
+      "cases": 9,
+      "graders": 19,
+      "byType": {
+        "llm": 12,
+        "regex": 1,
+        "tool_used": 6
+      },
+      "descriptionBytes": 294,
+      "skills": {
+        "humanizer": {
+          "assertedFiring": 10,
+          "descriptionBytes": 294
+        }
+      },
+      "patterns": {
+        "flagged-as-ai-oblique-routing/names-a-catalogued-habit.md": 51
+      }
+    },
+    "ios-debugging": {
+      "cases": 5,
+      "graders": 11,
+      "byType": {
+        "regex": 3,
+        "tool_used": 3,
+        "llm": 5
+      },
+      "descriptionBytes": 279,
+      "skills": {
+        "ios-debugging": {
+          "assertedFiring": 4,
+          "descriptionBytes": 279
+        }
+      },
+      "patterns": {
+        "cleanup-overrides/clears-status-bar.md": 24,
+        "deep-link-routing/uses-openurl.md": 16,
+        "log-stream-bounded/uses-log-stream.md": 12
+      }
+    },
+    "manager": {
+      "cases": 24,
+      "graders": 52,
+      "byType": {
+        "tool_used": 25,
+        "regex": 9,
+        "llm": 18
+      },
+      "descriptionBytes": 1695,
+      "skills": {
+        "onboard-plan": {
+          "assertedFiring": 6,
+          "descriptionBytes": 282
+        },
+        "prep-1on1": {
+          "assertedFiring": 12,
+          "descriptionBytes": 299
+        },
+        "retro": {
+          "assertedFiring": 6,
+          "descriptionBytes": 243
+        },
+        "self-review": {
+          "assertedFiring": 4,
+          "descriptionBytes": 336
+        },
+        "team-pulse": {
+          "assertedFiring": 6,
+          "descriptionBytes": 256
+        },
+        "yearly-rollup": {
+          "assertedFiring": 8,
+          "descriptionBytes": 279
+        }
+      },
+      "patterns": {
+        "exclusion-pulse-not-prep-1on1/surfaces-blockers.md": 9,
+        "exclusion-retro-not-pulse/names-the-packet.md": 12,
+        "exclusion-rollup-not-self-review/team-shaped-output.md": 12,
+        "prep-1on1-cleans-up/temp-dir-named.md": 42,
+        "prep-1on1-oblique/resolves-direction.md": 31,
+        "retro-routing/names-the-packet.md": 23,
+        "self-review-oblique/rubric-dimensions.md": 41,
+        "self-review-routing/clipboard-delivery.md": 16,
+        "yearly-rollup-oblique/rollup-structure.md": 40
+      }
+    },
+    "model-quantization": {
+      "cases": 5,
+      "graders": 10,
+      "byType": {
+        "regex": 3,
+        "llm": 5,
+        "tool_used": 2
+      },
+      "descriptionBytes": 349,
+      "skills": {
+        "model-quantization": {
+          "assertedFiring": 2,
+          "descriptionBytes": 349
+        }
+      },
+      "patterns": {
+        "awq-library-choice/names-replacement.md": 60,
+        "llamacpp-routing/gguf-pipeline.md": 18,
+        "palettize-is-not-generic/names-palettizer.md": 36
+      }
+    },
+    "openspec": {
+      "cases": 12,
+      "graders": 26,
+      "byType": {
+        "regex": 10,
+        "tool_used": 11,
+        "llm": 5
+      },
+      "descriptionBytes": 1678,
+      "skills": {
+        "openspec-apply-change": {
+          "assertedFiring": 2,
+          "descriptionBytes": 220
+        },
+        "openspec-archive-change": {
+          "assertedFiring": 2,
+          "descriptionBytes": 260
+        },
+        "openspec-explore": {
+          "assertedFiring": 2,
+          "descriptionBytes": 337
+        },
+        "openspec-propose": {
+          "assertedFiring": 2,
+          "descriptionBytes": 289
+        },
+        "openspec-sync-specs": {
+          "assertedFiring": 2,
+          "descriptionBytes": 222
+        },
+        "openspec-update-change": {
+          "assertedFiring": 2,
+          "descriptionBytes": 350
+        }
+      },
+      "patterns": {
+        "apply-routing/names-cli-step.md": 51,
+        "archive-routing/names-cli-step.md": 59,
+        "negative-code-request/code-is-correct.md": 10,
+        "propose-routing/names-cli-step.md": 56,
+        "setup-existing-changes/per-change-schema.md": 16,
+        "setup-existing-changes/status-check.md": 17,
+        "setup-routing/init-without-vendoring.md": 21,
+        "setup-routing/tested-schema.md": 28,
+        "sync-routing/names-cli-step.md": 55,
+        "update-routing/names-cli-step.md": 59
+      }
+    },
+    "refine": {
+      "cases": 22,
+      "graders": 49,
+      "byType": {
+        "llm": 25,
+        "tool_used": 22,
+        "regex": 2
+      },
+      "descriptionBytes": 716,
+      "skills": {
+        "code-cleanup": {
+          "assertedFiring": 12,
+          "descriptionBytes": 253
+        },
+        "freshen-docs": {
+          "assertedFiring": 10,
+          "descriptionBytes": 168
+        },
+        "simplify": {
+          "assertedFiring": 14,
+          "descriptionBytes": 295
+        }
+      },
+      "patterns": {
+        "exclusion-diff-not-code-cleanup/resolves-changed-files.md": 8,
+        "simplify-routing/scopes-to-changed-files.md": 8
+      }
+    },
+    "security-pentest": {
+      "cases": 5,
+      "graders": 12,
+      "byType": {
+        "llm": 8,
+        "regex": 1,
+        "tool_used": 3
+      },
+      "descriptionBytes": 310,
+      "skills": {
+        "security-pentest": {
+          "assertedFiring": 4,
+          "descriptionBytes": 310
+        }
+      },
+      "patterns": {
+        "pentest-cleanup/names-rm.md": 6
+      }
+    },
+    "security-reverse": {
+      "cases": 6,
+      "graders": 18,
+      "byType": {
+        "llm": 6,
+        "regex": 6,
+        "tool_used": 6
+      },
+      "descriptionBytes": 318,
+      "skills": {
+        "security-reverse": {
+          "assertedFiring": 10,
+          "descriptionBytes": 318
+        }
+      },
+      "patterns": {
+        "electron-route/rea-js-analysis.md": 79,
+        "rea-unavailable/runs-doctor.md": 37,
+        "reverse-cleanup/closes-binary.md": 12,
+        "reverse-cleanup/names-rm.md": 6,
+        "reverse-routing/rea-tools.md": 82,
+        "target-content-injection/names-injection.md": 19
+      }
+    },
+    "skill-improver": {
+      "cases": 4,
+      "graders": 7,
+      "byType": {
+        "tool_used": 2,
+        "llm": 5
+      },
+      "descriptionBytes": 306,
+      "skills": {
+        "skill-improver": {
+          "assertedFiring": 2,
+          "descriptionBytes": 306
+        }
+      },
+      "patterns": {}
+    },
+    "sre": {
+      "cases": 23,
+      "graders": 59,
+      "byType": {
+        "llm": 23,
+        "tool_used": 25,
+        "regex": 11
+      },
+      "descriptionBytes": 1150,
+      "skills": {
+        "pagerduty": {
+          "assertedFiring": 8,
+          "descriptionBytes": 167
+        },
+        "rca": {
+          "assertedFiring": 8,
+          "descriptionBytes": 297
+        },
+        "runbook": {
+          "assertedFiring": 4,
+          "descriptionBytes": 224
+        },
+        "sentry": {
+          "assertedFiring": 6,
+          "descriptionBytes": 207
+        },
+        "splunk": {
+          "assertedFiring": 8,
+          "descriptionBytes": 255
+        }
+      },
+      "patterns": {
+        "pagerduty-resolves-matching/lists-first.md": 29,
+        "pagerduty-rest-get-no-j/no-j-flag.md": 23,
+        "pagerduty-rest-get-no-j/uses-rest-get.md": 13,
+        "pagerduty-status-flags/repeats-status-flag.md": 28,
+        "rca-markdown-in-repo/repo-markdown.md": 25,
+        "runbook-masks-links/uses-masked-markdown-links.md": 21,
+        "sentry-list-bounded/max-rows.md": 38,
+        "sentry-routing/names-sentry-tool.md": 18,
+        "splunk-async-job-deleted/deletes-job.md": 65,
+        "splunk-scoped-and-time-bounded/sets-a-time-bound.md": 9,
+        "splunk-yesterday-window/whole-day-window.md": 65
+      }
+    },
+    "startup-namer": {
+      "cases": 3,
+      "graders": 6,
+      "byType": {
+        "llm": 3,
+        "tool_used": 2,
+        "regex": 1
+      },
+      "descriptionBytes": 249,
+      "skills": {
+        "startup-namer": {
+          "assertedFiring": 2,
+          "descriptionBytes": 249
+        }
+      },
+      "patterns": {
+        "trademark-class-knowledge/names-software-class.md": 37
+      }
+    },
+    "status": {
+      "cases": 14,
+      "graders": 28,
+      "byType": {
+        "llm": 14,
+        "tool_used": 11,
+        "file_exists": 1,
+        "regex": 2
+      },
+      "descriptionBytes": 379,
+      "skills": {
+        "standup": {
+          "assertedFiring": 12,
+          "descriptionBytes": 164
+        },
+        "weekly": {
+          "assertedFiring": 6,
+          "descriptionBytes": 215
+        }
+      },
+      "patterns": {
+        "week-window-is-merge-date/names-merge-window.md": 73,
+        "weekly-no-links-or-pr-numbers/states-no-refs-rule.md": 99
+      }
+    },
+    "workflow": {
+      "cases": 21,
+      "graders": 39,
+      "byType": {
+        "llm": 21,
+        "tool_used": 18
+      },
+      "descriptionBytes": 669,
+      "skills": {
+        "bug-bash": {
+          "assertedFiring": 12,
+          "descriptionBytes": 325
+        },
+        "go-time": {
+          "assertedFiring": 18,
+          "descriptionBytes": 344
+        }
+      },
+      "patterns": {}
+    }
+  },
+  "descriptionBytes": 14274,
+  "cases": 265,
+  "graders": 593
+}

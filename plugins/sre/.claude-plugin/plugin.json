@@ -1,0 +1,35 @@
+{
+  "name": "sre",
+  "description": "Site reliability engineering across PagerDuty, Sentry, and Splunk. Use for on-call, PIR/RCA authoring, querying logs and errors, or authoring runbooks.",
+  "version": "1.6.0",
+  "author": {
+    "name": "Eric Schoffstall",
+    "url": "https://contra.io"
+  },
+  "keywords": [
+    "sre",
+    "incident",
+    "outage",
+    "on-call",
+    "pagerduty",
+    "reliability",
+    "sentry",
+    "errors",
+    "splunk",
+    "logs",
+    "observability",
+    "runbook",
+    "pir",
+    "rca"
+  ],
+  "skills": [
+    "./skills/pagerduty",
+    "./skills/sentry",
+    "./skills/splunk",
+    "./skills/runbook",
+    "./skills/rca"
+  ],
+  "homepage": "https://github.com/yocontra/skills/tree/main/plugins/sre",
+  "repository": "https://github.com/yocontra/skills",
+  "license": "MIT"
+}

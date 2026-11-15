@@ -1,0 +1,40 @@
+{
+  "note": "P0 baseline for the repo-wide hillclimb. Compact by design: per-case scores only, no transcripts. Compare a later run against this with the same --runs and --ablation settings or the numbers are not comparable.",
+  "claudeVersion": "2.1.270",
+  "startedAt": "2026-09-14T19:57:48.613Z",
+  "runsPerCase": 3,
+  "ablation": "with-without",
+  "costUsd": 2.749,
+  "cases": {
+    "negative-percentile-concept": {
+      "with": 1,
+      "without": 1,
+      "delta": 0
+    },
+    "pagerduty-routing": {
+      "with": 1,
+      "without": 0,
+      "delta": 1
+    },
+    "rca-routing": {
+      "with": 1,
+      "without": 0,
+      "delta": 1
+    },
+    "runbook-routing": {
+      "with": 1,
+      "without": 0,
+      "delta": 1
+    },
+    "sentry-routing": {
+      "with": 1,
+      "without": 0,
+      "delta": 1
+    },
+    "splunk-routing": {
+      "with": 1,
+      "without": 0,
+      "delta": 1
+    }
+  }
+}
